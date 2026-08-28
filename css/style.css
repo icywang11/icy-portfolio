@@ -1179,6 +1179,6 @@ footer {
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; }
   .section-card { padding: 28px 20px; }
-  .sanrio-float { width: 56px; height: 56px; padding: 4px; }
+  .slider-btn { width: 34px; height: 34px; font-size: 22px; }
   .portfolio-title { font-size: clamp(32px, 10vw, 56px); }
 }
