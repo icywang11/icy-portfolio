@@ -145,15 +145,12 @@ function closeReviewPicker() {
   if (!reviewPicker) return;
   reviewPicker.hidden = true;
   if (workViewer?.hidden) document.body.style.overflow = "";
-  if (location.hash === "#work-review") {
-    history.replaceState(null, "", "#skills");
-  }
 }
 
-document.querySelectorAll("[data-review-pick]").forEach((link) => {
-  link.addEventListener("click", (event) => {
+document.querySelectorAll("[data-review-pick]").forEach((btn) => {
+  btn.addEventListener("click", (event) => {
     event.preventDefault();
-    history.replaceState(null, "", link.getAttribute("href"));
+    event.stopPropagation();
     openReviewPicker();
   });
 });
@@ -164,7 +161,6 @@ reviewPicker?.addEventListener("click", (event) => {
 });
 reviewPicker?.querySelector("[data-open-gallery]")?.addEventListener("click", () => {
   closeReviewPicker();
-  history.replaceState(null, "", "#work-review");
   openGallery("review");
 });
 
@@ -175,7 +171,6 @@ document.addEventListener("keydown", (event) => {
 
 const hashKey = location.hash === "#work-yuqing" ? "yuqing" : null;
 if (hashKey) openGallery(hashKey);
-if (location.hash === "#work-review") openReviewPicker();
 
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
