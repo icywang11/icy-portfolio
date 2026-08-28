@@ -113,9 +113,7 @@ function shiftSlide(delta) {
 document.querySelectorAll("[data-gallery]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    const key = link.dataset.gallery;
-    history.replaceState(null, "", link.getAttribute("href"));
-    openGallery(key);
+    openGallery(link.dataset.gallery);
   });
 });
 
