@@ -285,3 +285,87 @@ if (pageDrifts.size > 0) {
   pageDrifts.forEach((_, page) => driftObserver.observe(page));
   syncActiveDrift();
 }
+
+const POP_MARKS = ["♡", "☁", "✦", "⋆", "✿"];
+
+function spawnPops(x, y, count = 5) {
+  for (let i = 0; i < count; i += 1) {
+    const pop = document.createElement("span");
+    pop.className = "click-pop";
+    pop.textContent = POP_MARKS[(i + Math.floor(Math.random() * 4)) % POP_MARKS.length];
+    const angle = (Math.PI * 2 * i) / count + Math.random() * 0.4;
+    const dist = 28 + Math.random() * 36;
+    pop.style.left = `${x}px`;
+    pop.style.top = `${y}px`;
+    pop.style.setProperty("--dx", `${Math.cos(angle) * dist}px`);
+    pop.style.setProperty("--dy", `${Math.sin(angle) * dist - 24}px`);
+    document.body.appendChild(pop);
+    setTimeout(() => pop.remove(), 950);
+  }
+}
+
+document.addEventListener("click", (event) => {
+  if (event.target.closest(".work-viewer, .topbar, .site-buddy")) return;
+  spawnPops(event.clientX, event.clientY, 4);
+});
+
+document.querySelectorAll(".bounce-letter:not(.space)").forEach((letter) => {
+  letter.addEventListener("click", (event) => {
+    event.stopPropagation();
+    letter.classList.remove("is-poke");
+    void letter.offsetWidth;
+    letter.classList.add("is-poke");
+    spawnPops(event.clientX, event.clientY, 6);
+    setTimeout(() => letter.classList.remove("is-poke"), 450);
+  });
+});
+
+const avatar = document.querySelector(".journal-avatar");
+if (avatar) {
+  const wave = () => {
+    avatar.classList.remove("is-loved");
+    void avatar.offsetWidth;
+    avatar.classList.add("is-loved");
+    showToast("被发现了 ♡ 你好呀");
+    const rect = avatar.getBoundingClientRect();
+    spawnPops(rect.left + rect.width / 2, rect.top + 20, 7);
+    setTimeout(() => avatar.classList.remove("is-loved"), 900);
+  };
+  avatar.addEventListener("click", (event) => {
+    event.stopPropagation();
+    wave();
+  });
+  avatar.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      wave();
+    }
+  });
+}
+
+const buddy = document.querySelector(".site-buddy");
+const buddyBubble = document.querySelector(".buddy-bubble");
+const buddyLines = [
+  "点我呀 ♡",
+  "点屏幕会掉小心心",
+  "往下滑，还有更多 Icy",
+  "实习便利贴记得看",
+  "书单可以慢慢翻",
+  "今天也要开开心心",
+  "我是路过的云朵狗"
+];
+let buddyIndex = 0;
+let buddyTimer;
+
+if (buddy && buddyBubble) {
+  buddy.addEventListener("click", (event) => {
+    event.stopPropagation();
+    buddyIndex = (buddyIndex + 1) % buddyLines.length;
+    buddyBubble.textContent = buddyLines[buddyIndex];
+    buddy.classList.add("is-talking");
+    const rect = buddy.getBoundingClientRect();
+    spawnPops(rect.left + rect.width / 2, rect.top, 6);
+    clearTimeout(buddyTimer);
+    buddyTimer = setTimeout(() => buddy.classList.remove("is-talking"), 2400);
+  });
+}
