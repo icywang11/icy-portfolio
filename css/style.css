@@ -591,13 +591,9 @@ img { display: block; max-width: 100%; }
   animation-delay: calc(var(--i) * 0.08s);
 }
 
-.photo-quote {
-  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: 15px;
-  color: var(--ink-soft);
-  text-align: center;
-  margin-bottom: 18px;
-  letter-spacing: 0.06em;
+.lyric-line--soft {
+  font-size: clamp(16px, 3vw, 20px);
+  letter-spacing: 0.08em;
 }
 
 .img-placeholder {
