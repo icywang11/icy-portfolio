@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <rect width="120" height="120" rx="24" fill="#1a1a2e"/>
+  <text x="60" y="50" text-anchor="middle" fill="#e94560" font-family="Arial, sans-serif" font-size="16" font-weight="bold">FORZA</text>
+  <text x="60" y="72" text-anchor="middle" fill="#fff" font-family="Microsoft YaHei, PingFang SC, sans-serif" font-size="13">0s¿5</text>
+  <rect x="20" y="82" width="80" height="8" rx="4" fill="#e94560" opacity="0.6"/>
+</svg>
