@@ -1403,14 +1403,14 @@ img { display: block; max-width: 100%; }
 }
 
 .author-chip img {
-  width: 62px;
-  height: 62px;
+  width: 68px;
+  height: 68px;
   object-fit: cover;
-  object-position: center 18%;
+  object-position: center 30%;
   border-radius: 50%;
   border: 3px solid #fff;
   box-shadow: 0 6px 14px rgba(110, 184, 212, 0.2);
-  background: #fff;
+  background: #d9eef6;
 }
 
 .author-chip figcaption {
