@@ -111,35 +111,70 @@ const CINNA_GIFS = Array.from({ length: 8 }, (_, i) =>
   `assets/sanrio/cinna-${String(i + 1).padStart(2, "0")}.gif`
 );
 
+const pageDrifts = new Map();
+const pageVisibility = new Map();
+
 document.querySelectorAll(".page").forEach((page, pageIndex) => {
+  if (page.classList.contains("page-icy")) return;
+
   const drift = document.createElement("div");
   drift.className = "page-drift";
   drift.setAttribute("aria-hidden", "true");
 
-  const cloudCount = page.classList.contains("page-icy") ? 2 : 3;
-  const cinnaCount = page.classList.contains("page-icy") ? 1 : 2;
-
-  for (let i = 0; i < cloudCount; i += 1) {
+  for (let i = 0; i < 3; i += 1) {
     const cloud = document.createElement("span");
     cloud.className = "drift-cloud";
-    cloud.style.setProperty("--left", `${8 + pageIndex * 5 + i * 26}%`);
-    cloud.style.setProperty("--delay", `${i * 5 + pageIndex * 1.5}s`);
-    cloud.style.setProperty("--duration", `${20 + i * 6}s`);
-    cloud.style.setProperty("--size", `${40 + i * 12}px`);
+    cloud.style.setProperty("--left", `${8 + i * 28}%`);
+    cloud.style.setProperty("--delay", `${i * 3 + (pageIndex % 3)}s`);
+    cloud.style.setProperty("--duration", `${14 + i * 3}s`);
+    cloud.style.setProperty("--size", `${46 + i * 12}px`);
     drift.appendChild(cloud);
   }
 
-  for (let i = 0; i < cinnaCount; i += 1) {
+  for (let i = 0; i < 2; i += 1) {
     const img = document.createElement("img");
     img.className = "drift-cinna";
     img.src = CINNA_GIFS[(pageIndex * 2 + i) % CINNA_GIFS.length];
     img.alt = "";
-    img.style.setProperty("--left", `${18 + i * 38 + pageIndex * 3}%`);
-    img.style.setProperty("--delay", `${4 + i * 7 + pageIndex * 2}s`);
-    img.style.setProperty("--duration", `${24 + i * 5}s`);
-    img.style.setProperty("--size", page.classList.contains("page-icy") ? "40px" : "46px");
+    img.style.setProperty("--left", `${16 + i * 38}%`);
+    img.style.setProperty("--delay", `${i * 4 + 1 + (pageIndex % 4)}s`);
+    img.style.setProperty("--duration", `${16 + i * 4}s`);
+    img.style.setProperty("--size", "52px");
     drift.appendChild(img);
   }
 
-  page.insertBefore(drift, page.firstChild);
+  document.body.appendChild(drift);
+  pageDrifts.set(page, drift);
+  pageVisibility.set(page, 0);
 });
+
+function syncActiveDrift() {
+  let bestPage = null;
+  let bestRatio = 0;
+
+  pageVisibility.forEach((ratio, page) => {
+    if (ratio > bestRatio) {
+      bestRatio = ratio;
+      bestPage = page;
+    }
+  });
+
+  pageDrifts.forEach((drift, page) => {
+    drift.classList.toggle("is-active", page === bestPage && bestRatio > 0.08);
+  });
+}
+
+if (pageDrifts.size > 0) {
+  const driftObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        pageVisibility.set(entry.target, entry.intersectionRatio);
+      });
+      syncActiveDrift();
+    },
+    { threshold: [0, 0.08, 0.15, 0.25, 0.4, 0.55, 0.7, 0.85, 1] }
+  );
+
+  pageDrifts.forEach((_, page) => driftObserver.observe(page));
+  syncActiveDrift();
+}

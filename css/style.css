@@ -797,17 +797,16 @@ img { display: block; max-width: 100%; }
 /* 实习便利贴 */
 .sticky-board {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
-  gap: 36px 40px;
-  padding: 24px 8px 12px;
-  position: relative;
+  gap: 24px;
+  padding: 16px 0 8px;
 }
 
 .sticky-note {
   position: relative;
-  width: min(100%, 360px);
+  flex: 1;
+  max-width: calc(50% - 12px);
   padding: 38px 30px 30px;
   font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
   font-size: 14px;
@@ -818,7 +817,7 @@ img { display: block; max-width: 100%; }
 .note-sky {
   background: linear-gradient(155deg, #ffffff 0%, #e8f6fc 55%, #d9effa 100%);
   clip-path: polygon(1% 4%, 94% 0%, 100% 10%, 97% 92%, 86% 100%, 3% 96%, 0% 18%);
-  transform: rotate(-4deg);
+  transform: rotate(-2.5deg);
   box-shadow:
     5px 7px 0 rgba(184, 228, 244, 0.55),
     10px 18px 28px rgba(110, 184, 212, 0.14);
@@ -827,7 +826,7 @@ img { display: block; max-width: 100%; }
 .note-cream {
   background: linear-gradient(155deg, #fffef9 0%, #fff6df 55%, #ffefc8 100%);
   clip-path: polygon(4% 0%, 100% 5%, 96% 88%, 78% 100%, 0% 94%, 2% 14%);
-  transform: rotate(3.5deg) translateY(28px);
+  transform: rotate(2.5deg);
   box-shadow:
     5px 7px 0 rgba(255, 233, 168, 0.45),
     10px 18px 28px rgba(110, 184, 212, 0.12);
@@ -837,6 +836,9 @@ img { display: block; max-width: 100%; }
   transform: rotate(0deg) translateY(-6px) scale(1.01);
   z-index: 3;
 }
+
+.note-sky:hover { transform: rotate(-1deg) translateY(-6px) scale(1.01); }
+.note-cream:hover { transform: rotate(1deg) translateY(-6px) scale(1.01); }
 
 .washi {
   position: absolute;
@@ -905,11 +907,17 @@ img { display: block; max-width: 100%; }
 
 /* 全页飘落装饰 */
 .page-drift {
-  position: absolute;
+  position: fixed;
   inset: 0;
-  overflow: hidden;
+  overflow: visible;
   pointer-events: none;
-  z-index: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.page-drift.is-active {
+  opacity: 1;
 }
 
 .page > .shell,
@@ -920,16 +928,17 @@ img { display: block; max-width: 100%; }
 }
 
 .drift-cloud {
-  position: absolute;
-  top: -50px;
+  position: fixed;
+  top: 0;
   left: var(--left);
-  width: var(--size, 52px);
-  height: calc(var(--size, 52px) * 0.38);
-  background: rgba(255, 255, 255, 0.75);
+  width: var(--size, 56px);
+  height: calc(var(--size, 56px) * 0.38);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 999px;
   animation: driftFall var(--duration) linear infinite;
   animation-delay: var(--delay);
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 .drift-cloud::before,
@@ -955,26 +964,27 @@ img { display: block; max-width: 100%; }
 }
 
 .drift-cinna {
-  position: absolute;
-  top: -70px;
+  position: fixed;
+  top: 0;
   left: var(--left);
-  width: var(--size, 48px);
-  height: var(--size, 48px);
+  width: var(--size, 52px);
+  height: var(--size, 52px);
   object-fit: contain;
   background: #fff;
   border-radius: 50%;
   padding: 5px;
-  box-shadow: 0 4px 12px rgba(110, 184, 212, 0.15);
+  box-shadow: 0 4px 12px rgba(110, 184, 212, 0.2);
   animation: driftFall var(--duration) linear infinite;
   animation-delay: var(--delay);
   opacity: 0;
+  will-change: transform, opacity;
 }
 
 @keyframes driftFall {
-  0% { transform: translateY(-5vh) translateX(0) rotate(0deg); opacity: 0; }
-  8% { opacity: 0.75; }
-  92% { opacity: 0.45; }
-  100% { transform: translateY(105vh) translateX(24px) rotate(10deg); opacity: 0; }
+  0% { transform: translateY(-8%) translateX(0) rotate(0deg); opacity: 0; }
+  6% { opacity: 0.9; }
+  94% { opacity: 0.55; }
+  100% { transform: translateY(calc(100vh + 40px)) translateX(18px) rotate(8deg); opacity: 0; }
 }
 
 /* 游戏经历 */
@@ -1354,8 +1364,9 @@ footer {
   .jump-card:last-child { width: calc(50% - 10px); }
   .hobby-nav { grid-template-columns: 1fr; }
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
-  .sticky-board { flex-direction: column; align-items: center; }
-  .note-sky, .note-cream { transform: none; margin-top: 0; }
+  .sticky-board { flex-direction: column; align-items: stretch; }
+  .sticky-note { max-width: 100%; }
+  .note-sky, .note-cream { transform: rotate(0deg); }
   .section-card { padding: 28px 20px; }
   .slider-btn { width: 34px; height: 34px; font-size: 22px; }
   .portfolio-title { font-size: clamp(32px, 10vw, 56px); }
