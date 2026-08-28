@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from socketserver import ThreadingMixIn
-from http.server import HTTPServer
 
 PORT = 43123
 ROOT = Path(__file__).resolve().parents[1]
