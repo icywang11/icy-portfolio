@@ -3,22 +3,21 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="ICY 的个人主页" />
-  <title>ICY · My Little World</title>
+  <meta name="description" content="Icy 的个人作品集" />
+  <title>Icy's Portfolio</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#icy">ICY <span>♡</span></a>
+      <a class="brand" href="#icy">Icy <span>♡</span></a>
       <nav class="nav" aria-label="导航">
         <a href="#intro">关于</a>
-        <a href="#hobbies">爱好</a>
+        <a href="#interests">兴趣</a>
         <a href="#internship">实习</a>
         <a href="#gaming">游戏</a>
-        <a href="#ai-tools">AI</a>
-        <a href="#data">数据</a>
-        <a href="#media">文娱</a>
+        <a href="#skills">技能</a>
+        <a href="#writing">阅读文案</a>
       </nav>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="menu-btn" aria-label="菜单">☰</button>
@@ -28,24 +27,40 @@
   </header>
 
   <main>
-    <!-- 第一页：ICY -->
+    <!-- 第一页：Icy's Portfolio -->
     <section class="page page-icy" id="icy">
       <div class="icy-stage">
+        <span class="sanrio-ribbon" aria-hidden="true">🎀</span>
+        <span class="sanrio-bow" aria-hidden="true">🎀</span>
         <span class="icy-deco deco-1" aria-hidden="true">☁</span>
         <span class="icy-deco deco-2" aria-hidden="true">✦</span>
         <span class="icy-deco deco-3" aria-hidden="true">♡</span>
         <span class="icy-deco deco-4" aria-hidden="true">★</span>
+        <span class="icy-deco deco-5" aria-hidden="true">🌸</span>
+        <span class="icy-deco deco-6" aria-hidden="true">🌸</span>
 
         <p class="icy-kicker">WELCOME TO MY WORLD</p>
-        <h1 class="icy-title" aria-label="ICY">
-          <span class="i">I</span><span class="c">C</span><span class="y">Y</span>
+
+        <h1 class="portfolio-title" aria-label="Icy's Portfolio">
+          <span class="bounce-letter c1" style="--i:0">I</span>
+          <span class="bounce-letter c2" style="--i:1">c</span>
+          <span class="bounce-letter c3" style="--i:2">y</span>
+          <span class="bounce-letter c4" style="--i:3">'</span>
+          <span class="bounce-letter c5" style="--i:4">s</span>
+          <span class="bounce-letter space" style="--i:5">&nbsp;</span>
+          <span class="bounce-letter c1" style="--i:6">P</span>
+          <span class="bounce-letter c2" style="--i:7">o</span>
+          <span class="bounce-letter c3" style="--i:8">r</span>
+          <span class="bounce-letter c4" style="--i:9">t</span>
+          <span class="bounce-letter c5" style="--i:10">f</span>
+          <span class="bounce-letter c1" style="--i:11">o</span>
+          <span class="bounce-letter c2" style="--i:12">l</span>
+          <span class="bounce-letter c3" style="--i:13">i</span>
+          <span class="bounce-letter c4" style="--i:14">o</span>
         </h1>
-        <p class="icy-sub">PORTFOLIO / 个人主页</p>
+
         <p class="icy-jp">ようこそ · いらっしゃい</p>
-        <p class="icy-desc">
-          浅蓝色的、小小的、温柔的世界。<br />
-          向下滚动，看看关于我的故事。
-        </p>
+
         <a class="icy-scroll" href="#intro">
           <span>SCROLL</span>
           <span>↓</span>
@@ -59,16 +74,16 @@
         <div class="intro-card">
           <div class="intro-header">
             <div class="avatar-wrap">
-              <img src="assets/avatar.svg" alt="ICY 头像" />
+              <img src="assets/avatar.svg" alt="Icy 头像" />
             </div>
             <div class="intro-text">
-              <h2>你好，我是 <em>ICY</em></h2>
-              <p>XX 岁，就读于 XX 大学。喜欢海外运营、内容创作和数据分析，也把游戏、AI 工具和日常生活连在一起记录。</p>
-              <p>这个网站是我的小小世界——浅蓝、温柔、带一点日系与三丽鸥式的可爱。</p>
+              <h2>你好，我是 <em>Icy</em></h2>
+              <p>XX 岁，就读于 XX 大学。喜欢海外运营、内容创作和数据分析，也把游戏、音乐和旅行融进日常。</p>
+              <p>这个网站记录我的实习、项目能力，以及阅读和写作里的一点思考。</p>
               <div class="tags">
                 <span class="tag">海外运营</span>
                 <span class="tag">数据分析</span>
-                <span class="tag">日语</span>
+                <span class="tag">文案撰写</span>
                 <span class="tag">游戏</span>
               </div>
             </div>
@@ -79,9 +94,9 @@
             <p>选择你想了解的部分 ↓</p>
           </div>
           <nav class="jump-grid" aria-label="快速跳转">
-            <a class="jump-card" href="#hobbies">
-              <span class="jump-icon">📷</span>
-              <span class="jump-label">爱好与照片</span>
+            <a class="jump-card" href="#interests">
+              <span class="jump-icon">🌈</span>
+              <span class="jump-label">兴趣爱好</span>
             </a>
             <a class="jump-card" href="#internship">
               <span class="jump-icon">💼</span>
@@ -91,73 +106,63 @@
               <span class="jump-icon">🎮</span>
               <span class="jump-label">游戏经历</span>
             </a>
-            <a class="jump-card" href="#ai-tools">
-              <span class="jump-icon">🤖</span>
-              <span class="jump-label">AI 工具</span>
-            </a>
-            <a class="jump-card" href="#data">
+            <a class="jump-card" href="#skills">
               <span class="jump-icon">📊</span>
-              <span class="jump-label">数据与舆情</span>
+              <span class="jump-label">数据 & AI</span>
             </a>
-            <a class="jump-card" href="#media">
-              <span class="jump-icon">📚</span>
-              <span class="jump-label">动漫综艺书本</span>
+            <a class="jump-card" href="#writing">
+              <span class="jump-icon">✍️</span>
+              <span class="jump-label">阅读 & 文案</span>
             </a>
           </nav>
         </div>
       </div>
     </section>
 
-    <!-- 爱好与照片 -->
-    <section class="page" id="hobbies">
+    <!-- 兴趣爱好 -->
+    <section class="page" id="interests">
       <div class="shell">
         <div class="section-card">
           <div class="section-head">
-            <span class="page-num">03 / HOBBY</span>
-            <h2>爱好与 <em>照片</em></h2>
-            <p>小小的兴趣，持续提供灵感。</p>
+            <span class="page-num">03 / INTERESTS</span>
+            <h2>兴趣 <em>爱好</em></h2>
+            <p>打游戏、听音乐、摄影、旅游——这四件事构成了我大部分的休闲时光。</p>
           </div>
-          <div class="tags">
-            <span class="tag">摄影</span>
-            <span class="tag">旅行</span>
-            <span class="tag">音乐</span>
-            <span class="tag">咖啡</span>
+          <div class="hobby-grid">
+            <article class="hobby-item">
+              <span class="emoji">🎮</span>
+              <h3>打游戏</h3>
+              <p>喜欢 RPG 和联机合作，享受沉浸剧情，也享受和朋友一起通关的快乐。</p>
+            </article>
+            <article class="hobby-item">
+              <span class="emoji">🎵</span>
+              <h3>听音乐</h3>
+              <p>工作和学习时的背景音，也喜欢去现场感受舞台氛围。</p>
+            </article>
+            <article class="hobby-item">
+              <span class="emoji">📷</span>
+              <h3>摄影</h3>
+              <p>记录城市街角、咖啡馆光影，把日常拍成温柔的画面。</p>
+            </article>
+            <article class="hobby-item">
+              <span class="emoji">✈️</span>
+              <h3>旅游</h3>
+              <p>在不同城市收集灵感，把风景和故事带回创作里。</p>
+            </article>
           </div>
-          <div class="photo-grid">
+          <div class="photo-grid" style="margin-top:24px;">
             <figure class="photo-card">
-              <img src="assets/photo-1.svg" alt="照片 1" />
-              <figcaption>周末城市漫步</figcaption>
+              <img src="assets/photo-1.svg" alt="摄影" />
+              <figcaption>城市漫步</figcaption>
             </figure>
             <figure class="photo-card">
-              <img src="assets/photo-2.svg" alt="照片 2" />
-              <figcaption>喜欢的角落</figcaption>
+              <img src="assets/photo-2.svg" alt="旅行" />
+              <figcaption>旅途风景</figcaption>
             </figure>
             <figure class="photo-card">
-              <img src="assets/photo-3.svg" alt="照片 3" />
-              <figcaption>一次短途旅行</figcaption>
+              <img src="assets/photo-3.svg" alt="日常" />
+              <figcaption>日常瞬间</figcaption>
             </figure>
-          </div>
-          <div class="carousel">
-            <div class="slide active">
-              <div class="slide-emoji">📷</div>
-              <h4>摄影 · Photography</h4>
-              <p>记录光影和街头瞬间，把日常拍成温柔的画面。</p>
-            </div>
-            <div class="slide">
-              <div class="slide-emoji">✈️</div>
-              <h4>旅行 · Travel</h4>
-              <p>在不同城市收集灵感，把风景带回创作里。</p>
-            </div>
-            <div class="slide">
-              <div class="slide-emoji">🎵</div>
-              <h4>音乐 · Music</h4>
-              <p>喜欢现场，也喜欢耳机里的陪伴感。</p>
-            </div>
-            <div class="dots">
-              <button class="dot active" aria-label="1"></button>
-              <button class="dot" aria-label="2"></button>
-              <button class="dot" aria-label="3"></button>
-            </div>
           </div>
         </div>
       </div>
@@ -214,7 +219,7 @@
             <article class="card">
               <div class="card-num">01</div>
               <h3>主玩类型</h3>
-              <p>RPG、策略、独立游戏，偏爱有故事感的作品。</p>
+              <p>RPG、策略、独立游戏，偏爱有故事感和探索感的作品。</p>
             </article>
             <article class="card">
               <div class="card-num">02</div>
@@ -224,7 +229,7 @@
             <article class="card">
               <div class="card-num">03</div>
               <h3>收获</h3>
-              <p>团队协作、耐心试错，也培养了对系统设计的兴趣。</p>
+              <p>团队协作、耐心试错，也培养了对系统设计和用户运营的兴趣。</p>
             </article>
           </div>
           <div class="list-item"><strong>游戏名 A</strong><span>100+ 小时 · 最爱剧情与配乐</span></div>
@@ -233,112 +238,102 @@
       </div>
     </section>
 
-    <!-- AI 工具 -->
-    <section class="page" id="ai-tools">
+    <!-- 数据分析 + AI 工具 -->
+    <section class="page" id="skills">
       <div class="shell">
         <div class="section-card alt">
           <div class="section-head">
-            <span class="page-num">06 / AI</span>
-            <h2>AI <em>工具</em></h2>
-            <p>日常会用到的一些 AI 工具。</p>
+            <span class="page-num">06 / SKILLS</span>
+            <h2>数据 & <em>AI 能力</em></h2>
+            <p>数据分析、舆情处理与 AI 工具使用的综合能力。</p>
           </div>
-          <div class="card-grid">
-            <article class="card">
-              <div class="card-num">04</div>
-              <h3>ChatGPT / Claude</h3>
-              <p>写作润色、代码辅助、头脑风暴与思路整理。</p>
-            </article>
-            <article class="card">
-              <div class="card-num">05</div>
-              <h3>Cursor</h3>
-              <p>这个网站就是用 Cursor 搭建的，边聊边改很方便。</p>
-            </article>
-            <article class="card">
-              <div class="card-num">06</div>
-              <h3>自动化机器人</h3>
-              <p>积分商城、指令配置与全自动化流程搭建。</p>
-            </article>
+          <div class="skills-split">
+            <div class="skills-block">
+              <h3>📊 数据分析</h3>
+              <div class="flow">
+                <div class="flow-step">
+                  <div class="flow-num">01</div>
+                  <div><h3>需求定义</h3><p>明确监测声量、热点或活动效果目标。</p></div>
+                </div>
+                <div class="flow-step">
+                  <div class="flow-num">02</div>
+                  <div><h3>采集清洗</h3><p>社媒数据抓取、去重标注与情感分类。</p></div>
+                </div>
+                <div class="flow-step">
+                  <div class="flow-num">03</div>
+                  <div><h3>可视化复盘</h3><p>Excel / Python 输出趋势图与复盘报告。</p></div>
+                </div>
+              </div>
+              <div class="tags" style="margin-top:14px;">
+                <span class="tag">Python</span>
+                <span class="tag">Pandas</span>
+                <span class="tag">SQL</span>
+                <span class="tag">舆情监测</span>
+              </div>
+            </div>
+            <div class="skills-block">
+              <h3>🤖 AI 工具使用</h3>
+              <div class="card-grid" style="grid-template-columns:1fr;gap:10px;">
+                <article class="card" style="min-height:auto;padding:16px;">
+                  <h3>ChatGPT / Claude</h3>
+                  <p>写作润色、思路整理、代码辅助与头脑风暴。</p>
+                </article>
+                <article class="card" style="min-height:auto;padding:16px;">
+                  <h3>Cursor</h3>
+                  <p>项目开发与网页搭建，边聊边改、快速迭代。</p>
+                </article>
+                <article class="card" style="min-height:auto;padding:16px;">
+                  <h3>自动化机器人</h3>
+                  <p>积分商城、指令配置与流程自动化搭建。</p>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 数据分析与舆情 -->
-    <section class="page" id="data">
+    <!-- 阅读认知 + 文案撰写 -->
+    <section class="page" id="writing">
       <div class="shell">
         <div class="section-card">
           <div class="section-head">
-            <span class="page-num">07 / DATA</span>
-            <h2>数据与 <em>舆情</em></h2>
-            <p>我理解和实践的一套基础流程。</p>
+            <span class="page-num">07 / WRITING</span>
+            <h2>阅读 & <em>文案</em></h2>
+            <p>从书本里吸收认知，再用文字把想法表达出来。</p>
           </div>
-          <div class="flow">
-            <div class="flow-step">
-              <div class="flow-num">01</div>
-              <div><h3>需求定义</h3><p>明确监测品牌声量、热点事件或活动效果。</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-num">02</div>
-              <div><h3>数据采集</h3><p>从社媒、新闻、论坛等渠道抓取，注意合规脱敏。</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-num">03</div>
-              <div><h3>清洗标注</h3><p>去重去噪，做情感标注与主题分类。</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-num">04</div>
-              <div><h3>分析可视化</h3><p>Excel、Python 或 BI 工具输出趋势与词云。</p></div>
-            </div>
-            <div class="flow-step">
-              <div class="flow-num">05</div>
-              <div><h3>结论应对</h3><p>输出简报，对负面舆情拟定回应方案。</p></div>
-            </div>
-          </div>
-          <div class="tags" style="margin-top:20px;">
-            <span class="tag">Python</span>
-            <span class="tag">Pandas</span>
-            <span class="tag">SQL</span>
-            <span class="tag">情感分析</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 动漫综艺书本 -->
-    <section class="page" id="media">
-      <div class="shell">
-        <div class="section-card alt">
-          <div class="section-head">
-            <span class="page-num">08 / MEDIA</span>
-            <h2>动漫 · 综艺 · <em>书本</em></h2>
-            <p>最近在追的、反复看的，以及想推荐的。</p>
-          </div>
-          <div class="media-grid">
-            <div class="media-col">
-              <h3>🎬 动漫</h3>
+          <div class="writing-grid">
+            <div class="book-card">
+              <h3>📖 书本认知</h3>
               <ul>
-                <li><strong>作品 A</strong> — 一句话推荐</li>
-                <li><strong>作品 B</strong> — 治愈 / 热血</li>
-                <li><strong>作品 C</strong> — 待补番</li>
+                <li><strong>《书名 A》</strong> — 关于运营与用户心理的启发，学会了从用户视角看问题。</li>
+                <li><strong>《书名 B》</strong> — 拓宽了对内容传播的理解，影响了我写文案的结构。</li>
+                <li><strong>《书名 C》</strong> — 想二刷的一本，对叙事和节奏把控很有收获。</li>
               </ul>
+              <p style="margin-top:14px;font-size:13px;color:var(--ink-soft);line-height:1.8;">
+                阅读对我来说不只是消遣，更是积累表达素材和思维框架的方式。每读完一本，会记下 1～2 个可以迁移到工作或创作里的观点。
+              </p>
             </div>
-            <div class="media-col">
-              <h3>📺 综艺</h3>
+            <div class="copy-card">
+              <h3>✍️ 文案撰写能力</h3>
               <ul>
-                <li><strong>节目 A</strong> — 轻松下饭</li>
-                <li><strong>节目 B</strong> — 学表达</li>
-                <li><strong>节目 C</strong> — 和室友一起追</li>
+                <li><strong>社媒文案</strong> — 海外平台短文案、话题互动与品牌调性把控</li>
+                <li><strong>活动文案</strong> — 联动玩法说明、规则介绍与用户引导语</li>
+                <li><strong>运营邮件</strong> — 推送标题、正文结构与转化引导</li>
+                <li><strong>复盘报告</strong> — 把数据结论写成清晰、可执行的文字</li>
               </ul>
-            </div>
-            <div class="media-col">
-              <h3>📖 书本</h3>
-              <ul>
-                <li><strong>书名 A</strong> — 读后印象</li>
-                <li><strong>书名 B</strong> — 拓宽视野</li>
-                <li><strong>书名 C</strong> — 想二刷</li>
-              </ul>
+              <div class="copy-tags">
+                <span class="tag">简洁有力</span>
+                <span class="tag">用户视角</span>
+                <span class="tag">中英双语</span>
+                <span class="tag">情感共鸣</span>
+              </div>
             </div>
           </div>
+          <blockquote class="copy-quote">
+            「好的文案不是堆砌形容词，而是让读者在三秒内知道——这和我有什么关系。」
+            <cite>— 可替换为你自己的写作理念或代表性文案片段</cite>
+          </blockquote>
         </div>
       </div>
     </section>
@@ -358,7 +353,7 @@
   </main>
 
   <footer>
-    <p>© <span id="year"></span> ICY · My Little World</p>
+    <p>© <span id="year"></span> Icy · My Little Portfolio</p>
   </footer>
 
   <script src="js/main.js"></script>
