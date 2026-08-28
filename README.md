@@ -18,7 +18,7 @@
 直接用浏览器打开 `index.html`，或运行：
 
 ```bash
-python3 -m http.server 43123
+python3 scripts/serve.py
 ```
 
 然后访问 http://localhost:43123
