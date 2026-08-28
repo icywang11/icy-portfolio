@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="个人主页 — 自我介绍、实习、游戏、AI 工具、数据分析与兴趣爱好" />
+  <title>你的名字 · 个人主页</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#top">你的名字</a>
+      <a class="github-link" href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">
+        GitHub
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- 自我介绍 -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow">Welcome</p>
+          <h1>你好，我是 <span class="highlight">你的名字</span></h1>
+          <p class="lead">
+            这里是我的个人主页。你可以在这里了解我的实习经历、游戏故事、常用的 AI 工具，
+            以及我在数据分析与舆情处理方面的一些实践，还有我平时喜欢的动漫、综艺和书籍。
+          </p>
+          <p class="meta">
+            <span>📍 城市 / 学校</span>
+            <span>✉️ your.email@example.com</span>
+          </p>
+        </div>
+        <div class="hero-avatar">
+          <img src="assets/avatar.svg" alt="个人头像" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 小跳链导航 -->
+    <nav class="jump-nav" aria-label="页面导航">
+      <div class="container">
+        <h2 class="jump-title">快速跳转</h2>
+        <div class="jump-grid">
+          <a class="jump-card" href="#hobbies">
+            <span class="jump-icon">📷</span>
+            <span class="jump-label">爱好与照片</span>
+          </a>
+          <a class="jump-card" href="#internship">
+            <span class="jump-icon">💼</span>
+            <span class="jump-label">实习经历</span>
+          </a>
+          <a class="jump-card" href="#gaming">
+            <span class="jump-icon">🎮</span>
+            <span class="jump-label">游戏经历</span>
+          </a>
+          <a class="jump-card" href="#ai-tools">
+            <span class="jump-icon">🤖</span>
+            <span class="jump-label">AI 工具使用</span>
+          </a>
+          <a class="jump-card" href="#data-opinion">
+            <span class="jump-icon">📊</span>
+            <span class="jump-label">数据分析与舆情</span>
+          </a>
+          <a class="jump-card" href="#media">
+            <span class="jump-icon">📚</span>
+            <span class="jump-label">动漫综艺书本</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 爱好与照片 -->
+    <section id="hobbies" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>爱好与照片</h2>
+          <p>记录一些我喜欢做的事情，以及值得留念的瞬间。</p>
+        </div>
+        <div class="hobby-tags">
+          <span class="tag">摄影</span>
+          <span class="tag">旅行</span>
+          <span class="tag">跑步</span>
+          <span class="tag">做饭</span>
+          <span class="tag">音乐</span>
+        </div>
+        <div class="photo-grid">
+          <figure class="photo-card">
+            <img src="assets/photo-1.svg" alt="爱好照片 1" />
+            <figcaption>周末城市漫步</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photo-2.svg" alt="爱好照片 2" />
+            <figcaption>喜欢的咖啡馆角落</figcaption>
+          </figure>
+          <figure class="photo-card">
+            <img src="assets/photo-3.svg" alt="爱好照片 3" />
+            <figcaption>一次短途旅行</figcaption>
+          </figure>
+        </div>
+        <p class="note">提示：把 <code>assets/</code> 里的占位图换成你自己的照片，并修改上方文字即可。</p>
+      </div>
+    </section>
+
+    <!-- 实习经历 -->
+    <section id="internship" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>实习经历</h2>
+          <p>我在实习中的主要经历与收获。</p>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="timeline-date">2025.06 — 2025.09</div>
+            <div class="timeline-body">
+              <h3>公司名称 · 岗位名称</h3>
+              <p>简要描述你的工作内容，例如：参与用户调研、协助数据处理、撰写分析报告等。</p>
+              <ul>
+                <li>负责 XX 模块的需求梳理与落地</li>
+                <li>使用 Python / Excel 完成日常数据分析</li>
+                <li>与产品、运营团队协作推进项目上线</li>
+              </ul>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-date">2024.12 — 2025.03</div>
+            <div class="timeline-body">
+              <h3>另一家公司 · 岗位名称</h3>
+              <p>可以写第二段实习，或校园项目、竞赛经历。</p>
+              <ul>
+                <li>完成 XX 报告并输出可视化看板</li>
+                <li>整理业务流程文档，提升团队沟通效率</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 游戏经历 -->
+    <section id="gaming" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>游戏经历</h2>
+          <p>我玩过的、喜欢的，以及从中收获的东西。</p>
+        </div>
+        <div class="card-grid">
+          <article class="info-card">
+            <h3>🎯 主玩类型</h3>
+            <p>RPG、策略、独立游戏。喜欢有故事感和探索感的作品。</p>
+          </article>
+          <article class="info-card">
+            <h3>🏆 难忘经历</h3>
+            <p>例如：和朋友们通宵通关某款合作游戏，或在排位里第一次打到目标段位。</p>
+          </article>
+          <article class="info-card">
+            <h3>💡 游戏带给我的</h3>
+            <p>团队协作、耐心试错、对系统设计的好奇——这些也影响了我学习和工作的方式。</p>
+          </article>
+        </div>
+        <div class="game-list">
+          <div class="game-item">
+            <strong>游戏名 A</strong>
+            <span>100+ 小时 · 最爱它的剧情与配乐</span>
+          </div>
+          <div class="game-item">
+            <strong>游戏名 B</strong>
+            <span>联机常客 · 擅长辅助位</span>
+          </div>
+          <div class="game-item">
+            <strong>游戏名 C</strong>
+            <span>独立游戏 · 小而美的体验</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI 工具使用 -->
+    <section id="ai-tools" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>AI 工具使用</h2>
+          <p>我日常会用到的一些 AI 工具，以及它们帮我做了什么。</p>
+        </div>
+        <div class="tool-grid">
+          <article class="tool-card">
+            <h3>ChatGPT / Claude</h3>
+            <p class="tool-use">用途：写作润色、代码辅助、头脑风暴</p>
+            <p>用来快速整理思路、改写文案，或在写代码时查 bug、补注释。</p>
+          </article>
+          <article class="tool-card">
+            <h3>Cursor</h3>
+            <p class="tool-use">用途：项目开发、网页搭建</p>
+            <p>这个个人主页就是用 Cursor 辅助搭建的。适合边聊边改、快速迭代。</p>
+          </article>
+          <article class="tool-card">
+            <h3>Midjourney / 即梦</h3>
+            <p class="tool-use">用途：配图、视觉灵感</p>
+            <p>做封面、海报或 PPT 时生成参考图，节省找素材的时间。</p>
+          </article>
+          <article class="tool-card">
+            <h3>其他工具</h3>
+            <p class="tool-use">用途：按需补充</p>
+            <p>例如：Notion AI、Perplexity、各类翻译与摘要工具。把这里改成你真实在用的即可。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 数据分析与舆情处理 -->
+    <section id="data-opinion" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>数据分析与舆情处理流程</h2>
+          <p>我理解和实践的一套基础流程，可按你的真实经验修改。</p>
+        </div>
+        <div class="flow">
+          <div class="flow-step">
+            <div class="flow-num">01</div>
+            <div>
+              <h3>需求定义</h3>
+              <p>明确分析目标：是监测品牌声量、追踪热点事件，还是评估某次活动效果。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">02</div>
+            <div>
+              <h3>数据采集</h3>
+              <p>从微博、小红书、新闻站点、论坛等渠道抓取或导出数据，注意合规与脱敏。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">03</div>
+            <div>
+              <h3>清洗与标注</h3>
+              <p>去重、去噪、统一格式；对文本做情感标注、关键词提取或主题分类。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">04</div>
+            <div>
+              <h3>分析可视化</h3>
+              <p>用 Excel、Python（Pandas / Matplotlib）或 BI 工具做趋势图、词云、情感分布等。</p>
+            </div>
+          </div>
+          <div class="flow-step">
+            <div class="flow-num">05</div>
+            <div>
+              <h3>结论与应对</h3>
+              <p>输出简报：核心发现、风险点、建议动作；对负面舆情拟定回应或监测方案。</p>
+            </div>
+          </div>
+        </div>
+        <div class="skills-row">
+          <span class="skill">Python</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Excel</span>
+          <span class="skill">SQL</span>
+          <span class="skill">Tableau</span>
+          <span class="skill">情感分析</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 动漫综艺书本 -->
+    <section id="media" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>动漫 · 综艺 · 书本</h2>
+          <p>最近在追的、反复看的，以及想推荐给你的。</p>
+        </div>
+        <div class="media-columns">
+          <div class="media-block">
+            <h3>🎬 动漫</h3>
+            <ul class="media-list">
+              <li><strong>作品名 A</strong> — 一句话推荐理由</li>
+              <li><strong>作品名 B</strong> — 治愈 / 热血 / 悬疑，你喜欢的点</li>
+              <li><strong>作品名 C</strong> — 补番清单里待看</li>
+            </ul>
+          </div>
+          <div class="media-block">
+            <h3>📺 综艺</h3>
+            <ul class="media-list">
+              <li><strong>节目名 A</strong> — 轻松下饭</li>
+              <li><strong>节目名 B</strong> — 学表达、学剪辑</li>
+              <li><strong>节目名 C</strong> — 和室友一起追</li>
+            </ul>
+          </div>
+          <div class="media-block">
+            <h3>📖 书本</h3>
+            <ul class="media-list">
+              <li><strong>书名 A</strong> — 作者 · 读后印象</li>
+              <li><strong>书名 B</strong> — 专业相关 / 拓宽视野</li>
+              <li><strong>书名 C</strong> — 想二刷的一本</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> 你的名字 · 用 HTML 挂在 GitHub Pages 上</p>
+      <a href="#top" class="back-top">回到顶部 ↑</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

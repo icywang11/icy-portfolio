@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" fill="none">
+  <rect width="400" height="300" fill="#e8dfd4"/>
+  <rect x="40" y="40" width="320" height="220" rx="12" fill="#d4c4b0"/>
+  <text x="200" y="160" text-anchor="middle" fill="#8a6f55" font-family="sans-serif" font-size="18">gG 1</text>
+</svg>
