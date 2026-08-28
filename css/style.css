@@ -502,7 +502,7 @@ img { display: block; max-width: 100%; }
 /* 爱好跳转 */
 .hobby-nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 12px;
   margin-bottom: 32px;
 }
@@ -1091,7 +1091,7 @@ footer {
   .journal-avatar { width: 128px; }
   .jump-card { width: calc(50% - 10px); min-width: 120px; }
   .jump-card:last-child { width: calc(50% - 10px); }
-  .hobby-nav { grid-template-columns: repeat(2, 1fr); }
+  .hobby-nav { grid-template-columns: 1fr; }
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; }
   .section-card { padding: 28px 20px; }
