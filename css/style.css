@@ -1119,6 +1119,66 @@ img { display: block; max-width: 100%; }
   border-bottom: 2px dashed var(--blue-soft);
 }
 
+.skill-jumps { display: grid; gap: 10px; }
+
+.skill-jump {
+  display: grid;
+  grid-template-columns: 44px 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--sky-light);
+  border: 2px solid #fff;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.skill-jump:hover {
+  transform: translateX(6px);
+  background: linear-gradient(90deg, #fff 0%, var(--pink-soft) 100%);
+  box-shadow: var(--shadow-soft);
+}
+
+.skill-jump-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--blue-soft);
+  color: var(--ink-deep);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.skill-jump-text {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.skill-jump-text strong {
+  font-size: 14px;
+  color: var(--ink-deep);
+  font-weight: 700;
+}
+
+.skill-jump-text em {
+  font-style: normal;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.skill-jump-go {
+  font-size: 12px;
+  font-weight: 700;
+  color: #8ec5d8;
+  white-space: nowrap;
+}
+
 .flow { display: grid; gap: 10px; }
 
 .flow-step {
@@ -1364,6 +1424,8 @@ footer {
   .jump-card:last-child { width: calc(50% - 10px); }
   .hobby-nav { grid-template-columns: 1fr; }
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
+  .skill-jump { grid-template-columns: 40px 1fr; }
+  .skill-jump-go { display: none; }
   .sticky-board { flex-direction: column; align-items: stretch; }
   .sticky-note { max-width: 100%; }
   .note-sky, .note-cream { transform: rotate(0deg); }

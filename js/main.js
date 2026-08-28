@@ -28,6 +28,13 @@ async function copyText(text) {
   }
 }
 
+document.querySelectorAll(".skill-jump[data-pending]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    showToast("跳转链接还没填，把地址发给我就能接上");
+  });
+});
+
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
     const text = btn.dataset.copy;
