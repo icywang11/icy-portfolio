@@ -106,3 +106,40 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   });
   syncDots();
 });
+
+const CINNA_GIFS = Array.from({ length: 8 }, (_, i) =>
+  `assets/sanrio/cinna-${String(i + 1).padStart(2, "0")}.gif`
+);
+
+document.querySelectorAll(".page").forEach((page, pageIndex) => {
+  const drift = document.createElement("div");
+  drift.className = "page-drift";
+  drift.setAttribute("aria-hidden", "true");
+
+  const cloudCount = page.classList.contains("page-icy") ? 2 : 3;
+  const cinnaCount = page.classList.contains("page-icy") ? 1 : 2;
+
+  for (let i = 0; i < cloudCount; i += 1) {
+    const cloud = document.createElement("span");
+    cloud.className = "drift-cloud";
+    cloud.style.setProperty("--left", `${8 + pageIndex * 5 + i * 26}%`);
+    cloud.style.setProperty("--delay", `${i * 5 + pageIndex * 1.5}s`);
+    cloud.style.setProperty("--duration", `${20 + i * 6}s`);
+    cloud.style.setProperty("--size", `${40 + i * 12}px`);
+    drift.appendChild(cloud);
+  }
+
+  for (let i = 0; i < cinnaCount; i += 1) {
+    const img = document.createElement("img");
+    img.className = "drift-cinna";
+    img.src = CINNA_GIFS[(pageIndex * 2 + i) % CINNA_GIFS.length];
+    img.alt = "";
+    img.style.setProperty("--left", `${18 + i * 38 + pageIndex * 3}%`);
+    img.style.setProperty("--delay", `${4 + i * 7 + pageIndex * 2}s`);
+    img.style.setProperty("--duration", `${24 + i * 5}s`);
+    img.style.setProperty("--size", page.classList.contains("page-icy") ? "40px" : "46px");
+    drift.appendChild(img);
+  }
+
+  page.insertBefore(drift, page.firstChild);
+});
