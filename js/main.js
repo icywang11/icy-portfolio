@@ -33,14 +33,14 @@ const GALLERIES = {
     kicker: "AI 工作流 · 智能化机器人",
     title: "使用 AI 进行舆情收集与对策",
     slides: [
-      { src: "assets/ai/yuqing-map.png", caption: "舆情处理", alt: "舆情处理流程图：收集、确认信息、制定策略、复盘预防" }
+      { src: "assets/ai/yuqing-map.png?v=2", caption: "舆情处理", alt: "舆情处理流程图：收集、确认信息、制定策略、复盘预防" }
     ]
   },
   review: {
     kicker: "AI 工作流 · 数据分析",
     title: "活动数据复盘优化",
     slides: [
-      { src: "assets/ai/review-improve.png", caption: "活动数据优化", alt: "社区数据优化思维导图：本社区数据、解决方案、预期目标与其他产品参考" }
+      { src: "assets/ai/review-improve.png?v=2", caption: "活动数据优化", alt: "社区数据优化思维导图：本社区数据、解决方案、预期目标与其他产品参考" }
     ]
   }
 };
