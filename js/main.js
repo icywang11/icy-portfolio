@@ -28,12 +28,114 @@ async function copyText(text) {
   }
 }
 
-document.querySelectorAll(".skill-jump[data-pending]").forEach((link) => {
+const GALLERIES = {
+  yuqing: {
+    kicker: "AI 使用 · 智能化机器人",
+    title: "使用 AI 进行舆情收集与对策",
+    slides: [
+      { src: "assets/ai/yuqing-map.png", caption: "舆情处理", alt: "舆情处理流程图：收集、确认信息、制定策略、复盘预防" }
+    ]
+  },
+  review: {
+    kicker: "AI 使用 · 数据分析",
+    title: "活动数据复盘优化",
+    slides: [
+      { src: "assets/ai/yuqing-map.png", caption: "1. 舆情分析", alt: "舆情分析流程图" },
+      { src: "assets/ai/review-data.png", caption: "2. 原来数据", alt: "DC社区活动中奖者重复情况分析" },
+      { src: "assets/ai/review-improve.png", caption: "3. 改善方式", alt: "社区数据优化方案思维导图" }
+    ]
+  }
+};
+
+const workViewer = document.getElementById("work-viewer");
+const workImg = document.getElementById("work-viewer-img");
+const workKicker = document.getElementById("work-viewer-kicker");
+const workTitle = document.getElementById("work-viewer-title");
+const workCaption = document.getElementById("work-viewer-caption");
+const workDots = document.getElementById("work-viewer-dots");
+const workStage = workViewer?.querySelector(".work-viewer-stage");
+const workPrev = workViewer?.querySelector(".work-viewer-nav.prev");
+const workNext = workViewer?.querySelector(".work-viewer-nav.next");
+const workClose = workViewer?.querySelector(".work-viewer-close");
+
+let activeGallery = null;
+let slideIndex = 0;
+
+function renderSlide() {
+  if (!activeGallery) return;
+  const slide = activeGallery.slides[slideIndex];
+  workImg.src = slide.src;
+  workImg.alt = slide.alt;
+  workCaption.textContent = slide.caption;
+  workDots.querySelectorAll("button").forEach((btn, i) => {
+    btn.classList.toggle("active", i === slideIndex);
+  });
+}
+
+function openGallery(key) {
+  const gallery = GALLERIES[key];
+  if (!gallery || !workViewer) return;
+  activeGallery = gallery;
+  slideIndex = 0;
+  workKicker.textContent = gallery.kicker;
+  workTitle.textContent = gallery.title;
+  workStage.classList.toggle("is-single", gallery.slides.length < 2);
+  workDots.innerHTML = "";
+  gallery.slides.forEach((_, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.setAttribute("aria-label", `第 ${i + 1} 张`);
+    btn.addEventListener("click", () => {
+      slideIndex = i;
+      renderSlide();
+    });
+    workDots.appendChild(btn);
+  });
+  renderSlide();
+  workViewer.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeGallery() {
+  if (!workViewer) return;
+  workViewer.hidden = true;
+  document.body.style.overflow = "";
+  if (location.hash.startsWith("#work-")) {
+    history.replaceState(null, "", "#skills");
+  }
+}
+
+function shiftSlide(delta) {
+  if (!activeGallery || activeGallery.slides.length < 2) return;
+  const total = activeGallery.slides.length;
+  slideIndex = (slideIndex + delta + total) % total;
+  renderSlide();
+}
+
+document.querySelectorAll("[data-gallery]").forEach((link) => {
   link.addEventListener("click", (event) => {
     event.preventDefault();
-    showToast("跳转链接还没填，把地址发给我就能接上");
+    const key = link.dataset.gallery;
+    history.replaceState(null, "", link.getAttribute("href"));
+    openGallery(key);
   });
 });
+
+workPrev?.addEventListener("click", () => shiftSlide(-1));
+workNext?.addEventListener("click", () => shiftSlide(1));
+workClose?.addEventListener("click", closeGallery);
+workViewer?.addEventListener("click", (event) => {
+  if (event.target === workViewer) closeGallery();
+});
+document.addEventListener("keydown", (event) => {
+  if (workViewer?.hidden) return;
+  if (event.key === "Escape") closeGallery();
+  if (event.key === "ArrowLeft") shiftSlide(-1);
+  if (event.key === "ArrowRight") shiftSlide(1);
+});
+
+const hashKey = location.hash === "#work-yuqing" ? "yuqing" : location.hash === "#work-review" ? "review" : null;
+if (hashKey) openGallery(hashKey);
 
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {

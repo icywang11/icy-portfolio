@@ -1179,6 +1179,135 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 
+.skill-item {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: var(--sky-light);
+  border: 2px solid #fff;
+}
+
+.work-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 240;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(63, 102, 120, 0.48);
+  backdrop-filter: blur(6px);
+}
+
+.work-viewer[hidden] { display: none; }
+
+.work-viewer-panel {
+  position: relative;
+  width: min(1080px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow: auto;
+  padding: 28px 24px 22px;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.work-viewer-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--sky-light);
+  color: var(--ink-deep);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.work-viewer-kicker {
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  color: #8ec5d8;
+  margin-bottom: 6px;
+}
+
+.work-viewer-title {
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: 22px;
+  color: var(--ink-deep);
+  margin-bottom: 16px;
+  padding-right: 40px;
+}
+
+.work-viewer-stage {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+  align-items: center;
+  gap: 8px;
+}
+
+.work-viewer-stage.is-single {
+  grid-template-columns: 1fr;
+}
+
+.work-viewer-stage.is-single .work-viewer-nav { display: none; }
+
+.work-viewer-nav {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--ink-deep);
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.work-viewer-frame {
+  overflow: auto;
+  max-height: min(68vh, 760px);
+  border-radius: 16px;
+  background: #f7fbff;
+  border: 2px solid var(--sky-light);
+}
+
+.work-viewer-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.work-viewer-caption {
+  text-align: center;
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink-deep);
+}
+
+.work-viewer-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.work-viewer-dots button {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  cursor: pointer;
+}
+
+.work-viewer-dots button.active { background: var(--blue); }
+
 .flow { display: grid; gap: 10px; }
 
 .flow-step {
@@ -1424,8 +1553,10 @@ footer {
   .jump-card:last-child { width: calc(50% - 10px); }
   .hobby-nav { grid-template-columns: 1fr; }
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
-  .skill-jump { grid-template-columns: 40px 1fr; }
+  .skill-jump, .skill-item { grid-template-columns: 40px 1fr; }
   .skill-jump-go { display: none; }
+  .work-viewer-stage { grid-template-columns: 1fr; }
+  .work-viewer-nav { display: none; }
   .sticky-board { flex-direction: column; align-items: stretch; }
   .sticky-note { max-width: 100%; }
   .note-sky, .note-cream { transform: rotate(0deg); }

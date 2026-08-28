@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=12" />
+  <link rel="stylesheet" href="css/style.css?v=13" />
 </head>
 <body>
   <header class="topbar">
@@ -437,51 +437,48 @@
             <div class="skills-block">
               <h3>🤖 搭建智能化机器人</h3>
               <div class="skill-jumps">
-                <a class="skill-jump" href="#" data-pending="true">
+                <div class="skill-item">
                   <span class="skill-jump-num">01</span>
                   <span class="skill-jump-text">
                     <strong>一些趣味交互玩法</strong>
                     <em>指令互动、签到与社区小游戏</em>
                   </span>
-                  <span class="skill-jump-go">跳转 →</span>
-                </a>
-                <a class="skill-jump" href="#" data-pending="true">
+                </div>
+                <div class="skill-item">
                   <span class="skill-jump-num">02</span>
                   <span class="skill-jump-text">
                     <strong>使用龙虾进行推送</strong>
                     <em>定时内容分发与运营触达</em>
                   </span>
-                  <span class="skill-jump-go">跳转 →</span>
-                </a>
-                <a class="skill-jump" href="#" data-pending="true">
+                </div>
+                <a class="skill-jump" href="#work-yuqing" data-gallery="yuqing">
                   <span class="skill-jump-num">03</span>
                   <span class="skill-jump-text">
                     <strong>使用 AI 进行舆情收集与对策</strong>
-                    <em>声量监测、情绪识别与应对建议</em>
+                    <em>点击查看舆情处理流程图</em>
                   </span>
-                  <span class="skill-jump-go">跳转 →</span>
+                  <span class="skill-jump-go">看图 →</span>
                 </a>
               </div>
             </div>
             <div class="skills-block">
               <h3>📊 数据分析</h3>
               <div class="skill-jumps">
-                <a class="skill-jump" href="#" data-pending="true">
+                <a class="skill-jump" href="#work-review" data-gallery="review">
                   <span class="skill-jump-num">01</span>
                   <span class="skill-jump-text">
                     <strong>活动数据复盘优化</strong>
-                    <em>活动效果拆解与下一轮策略</em>
+                    <em>舆情分析 · 原来数据 · 改善方式</em>
                   </span>
-                  <span class="skill-jump-go">跳转 →</span>
+                  <span class="skill-jump-go">看图 →</span>
                 </a>
-                <a class="skill-jump" href="#" data-pending="true">
+                <div class="skill-item">
                   <span class="skill-jump-num">02</span>
                   <span class="skill-jump-text">
                     <strong>商城搭建</strong>
                     <em>积分商城结构与运营配置</em>
                   </span>
-                  <span class="skill-jump-go">跳转 →</span>
-                </a>
+                </div>
               </div>
             </div>
           </div>
@@ -561,6 +558,22 @@
 
   <footer><p>© <span id="year"></span> Icy · My Little Portfolio ♡</p></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="js/main.js?v=7"></script>
+  <div class="work-viewer" id="work-viewer" hidden>
+    <div class="work-viewer-panel" role="dialog" aria-modal="true" aria-labelledby="work-viewer-title">
+      <button class="work-viewer-close" type="button" aria-label="关闭">×</button>
+      <p class="work-viewer-kicker" id="work-viewer-kicker"></p>
+      <h3 class="work-viewer-title" id="work-viewer-title"></h3>
+      <div class="work-viewer-stage">
+        <button class="work-viewer-nav prev" type="button" aria-label="上一张">‹</button>
+        <div class="work-viewer-frame">
+          <img id="work-viewer-img" alt="" />
+        </div>
+        <button class="work-viewer-nav next" type="button" aria-label="下一张">›</button>
+      </div>
+      <p class="work-viewer-caption" id="work-viewer-caption"></p>
+      <div class="work-viewer-dots" id="work-viewer-dots"></div>
+    </div>
+  </div>
+  <script src="js/main.js?v=8"></script>
 </body>
 </html>
