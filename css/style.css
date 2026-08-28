@@ -245,63 +245,6 @@ img { display: block; max-width: 100%; }
 
 .icy-scroll span:last-child { font-size: 20px; }
 
-/* 第一页底部联系方式 */
-.hero-contact-bar {
-  position: absolute;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  width: min(920px, calc(100% - 40px));
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 16px;
-}
-
-.hero-contact-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 18px 10px 12px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 2px solid #fff;
-  box-shadow: var(--shadow-soft);
-  font-family: inherit;
-  font-size: 13px;
-  color: var(--ink-deep);
-  cursor: pointer;
-  transition: transform 0.2s, background 0.2s;
-  max-width: calc(50% - 8px);
-}
-
-.hero-contact-left { margin-right: auto; }
-.hero-contact-right { margin-left: auto; }
-
-a.hero-contact-btn { text-decoration: none; }
-
-.hero-contact-btn:hover,
-.hero-contact-btn.copied {
-  transform: translateY(-3px);
-  background: var(--pink-soft);
-}
-
-.hero-contact-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
-  flex-shrink: 0;
-}
-
-.hero-contact-btn span {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
 /* 第二页：手帐本 */
 .page-intro { background: linear-gradient(180deg, #eef9ff 0%, #f8fcff 100%); }
 
@@ -389,6 +332,10 @@ a.hero-contact-btn { text-decoration: none; }
   border-bottom: 2px dotted var(--blue-soft);
 }
 
+.journal-avatar img {
+  object-position: center 18%;
+}
+
 .divider-mascot {
   width: 64px;
   height: 64px;
@@ -397,6 +344,7 @@ a.hero-contact-btn { text-decoration: none; }
   border: 3px solid #fff;
   box-shadow: var(--shadow-soft);
   object-fit: cover;
+  background: #fff;
 }
 
 .journal-divider h3 {
@@ -448,7 +396,7 @@ a.hero-contact-btn { text-decoration: none; }
   overflow: hidden;
   border: 3px solid #fff;
   box-shadow: 0 6px 16px rgba(110, 184, 212, 0.2);
-  background: var(--sky);
+  background: #fff;
 }
 
 .jump-mascot img {
@@ -502,6 +450,7 @@ a.hero-contact-btn { text-decoration: none; }
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
+  background: #fff;
 }
 
 .hobby-nav-card span {
@@ -733,9 +682,6 @@ a.hero-contact-btn { text-decoration: none; }
 }
 
 .game-card {
-  display: grid;
-  grid-template-columns: 72px 1fr;
-  gap: 16px;
   padding: 20px;
   border-radius: 22px;
   background: #fff;
@@ -1055,18 +1001,6 @@ footer {
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
   .job { grid-template-columns: 1fr; }
   .section-card { padding: 28px 20px; }
-  .hero-contact-bar {
-    bottom: 20px;
-    padding: 0 12px;
-    gap: 10px;
-  }
-
-  .hero-contact-btn {
-    padding: 8px 12px 8px 8px;
-    font-size: 11px;
-  }
-
-  .hero-contact-icon { width: 30px; height: 30px; }
   .sanrio-float { width: 56px; height: 56px; }
   .game-section-deco { display: none; }
   .portfolio-title { font-size: clamp(32px, 10vw, 56px); }
