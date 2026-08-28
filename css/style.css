@@ -554,10 +554,12 @@ img { display: block; max-width: 100%; }
 }
 
 .hobby-detail h3 {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
   font-size: 18px;
-  color: var(--ink-deep);
+  font-weight: 700;
+  color: #8ec5d8;
   margin-bottom: 8px;
+  letter-spacing: 0.06em;
 }
 
 .hobby-detail > p {
