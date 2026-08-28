@@ -4,6 +4,8 @@
 
 入口文件是仓库根目录的 `index.html`。
 
+网站正文、联系方式和发布地址的备份在 `留档.md`。
+
 ## 页面内容
 
 - 首页欢迎
@@ -60,6 +62,7 @@ git push -u origin main
 
 ```
 index.html              主页面
+留档.md                 网站正文与发布地址备份
 404.html                未找到页面时回到首页
 css/style.css           样式
 js/main.js              复制、相册、飘落、看图
