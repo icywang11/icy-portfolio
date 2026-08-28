@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=22" />
+  <link rel="stylesheet" href="css/style.css?v=23" />
 </head>
 <body>
   <header class="topbar">
@@ -209,14 +209,14 @@
             <div class="skills-block">
               <h3>📊 数据分析</h3>
               <div class="skill-jumps">
-                <button class="skill-jump has-go" type="button" data-review-pick>
+                <a class="skill-jump has-go" href="#work-review" data-gallery="review">
                   <span class="skill-jump-num">01</span>
                   <span class="skill-jump-text">
                     <strong>活动数据复盘</strong>
-                    <em>点开后可选看板，或看复盘图</em>
+                    <em>点开看社区数据优化图</em>
                   </span>
                   <span class="go-arrow" aria-hidden="true"></span>
-                </button>
+                </a>
                 <div class="skill-item">
                   <span class="skill-jump-num">02</span>
                   <span class="skill-jump-text">
@@ -650,32 +650,6 @@
       <div class="work-viewer-dots" id="work-viewer-dots"></div>
     </div>
   </div>
-  <div class="work-viewer" id="review-picker" hidden>
-    <div class="work-viewer-panel review-picker-panel" role="dialog" aria-modal="true" aria-labelledby="review-picker-title">
-      <button class="work-viewer-close" type="button" aria-label="关闭">×</button>
-      <p class="work-viewer-kicker">AI 工作流 · 数据分析</p>
-      <h3 class="work-viewer-title" id="review-picker-title">活动数据复盘</h3>
-      <p class="review-picker-hint">选一个跳转</p>
-      <div class="work-jumps">
-        <a class="skill-jump has-go" href="https://icywang11.github.io/discord-community-board/" target="_blank" rel="noopener noreferrer">
-          <span class="skill-jump-num">01</span>
-          <span class="skill-jump-text">
-            <strong>社区活动数据看板</strong>
-            <em>4 个社区、189 场活动、20 万参与人次，点开实操看板</em>
-          </span>
-          <span class="go-arrow" aria-hidden="true"></span>
-        </a>
-        <button class="skill-jump has-go" type="button" data-open-gallery="review">
-          <span class="skill-jump-num">02</span>
-          <span class="skill-jump-text">
-            <strong>复盘优化图</strong>
-            <em>看原来的社区数据优化思维导图</em>
-          </span>
-          <span class="go-arrow" aria-hidden="true"></span>
-        </button>
-      </div>
-    </div>
-  </div>
-  <script src="js/main.js?v=15"></script>
+  <script src="js/main.js?v=16"></script>
 </body>
 </html>

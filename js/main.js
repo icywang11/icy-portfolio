@@ -132,46 +132,6 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") shiftSlide(1);
 });
 
-const reviewPicker = document.getElementById("review-picker");
-const reviewPickerClose = reviewPicker?.querySelector(".work-viewer-close");
-
-function openReviewPicker() {
-  if (!reviewPicker) return;
-  reviewPicker.hidden = false;
-  document.body.style.overflow = "hidden";
-}
-
-function closeReviewPicker() {
-  if (!reviewPicker) return;
-  reviewPicker.hidden = true;
-  if (workViewer?.hidden) document.body.style.overflow = "";
-}
-
-document.querySelectorAll("[data-review-pick]").forEach((btn) => {
-  btn.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    openReviewPicker();
-  });
-});
-
-reviewPickerClose?.addEventListener("click", closeReviewPicker);
-reviewPicker?.addEventListener("click", (event) => {
-  if (event.target === reviewPicker) closeReviewPicker();
-});
-reviewPicker?.querySelector("[data-open-gallery]")?.addEventListener("click", () => {
-  closeReviewPicker();
-  openGallery("review");
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key !== "Escape") return;
-  if (reviewPicker && !reviewPicker.hidden) closeReviewPicker();
-});
-
-const hashKey = location.hash === "#work-yuqing" ? "yuqing" : null;
-if (hashKey) openGallery(hashKey);
-
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
     const text = btn.dataset.copy;
@@ -369,7 +329,7 @@ function spawnPops(x, y, count = 5) {
 }
 
 document.addEventListener("click", (event) => {
-  if (event.target.closest(".work-viewer, .topbar, .site-buddy, #review-picker")) return;
+  if (event.target.closest(".work-viewer, .topbar, .site-buddy")) return;
   spawnPops(event.clientX, event.clientY, 4);
 });
 
