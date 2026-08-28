@@ -1365,7 +1365,22 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(6px);
 }
 
-.work-viewer[hidden] { display: none; }
+.review-picker-panel {
+  width: min(560px, 100%);
+}
+
+.review-picker-hint {
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin: 0 0 16px;
+}
+
+.review-picker-panel .skill-jump {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+}
 
 .work-viewer-panel {
   position: relative;

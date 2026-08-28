@@ -132,8 +132,50 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight") shiftSlide(1);
 });
 
-const hashKey = location.hash === "#work-yuqing" ? "yuqing" : location.hash === "#work-review" ? "review" : null;
+const reviewPicker = document.getElementById("review-picker");
+const reviewPickerClose = reviewPicker?.querySelector(".work-viewer-close");
+
+function openReviewPicker() {
+  if (!reviewPicker) return;
+  reviewPicker.hidden = false;
+  document.body.style.overflow = "hidden";
+}
+
+function closeReviewPicker() {
+  if (!reviewPicker) return;
+  reviewPicker.hidden = true;
+  if (workViewer?.hidden) document.body.style.overflow = "";
+  if (location.hash === "#work-review") {
+    history.replaceState(null, "", "#skills");
+  }
+}
+
+document.querySelectorAll("[data-review-pick]").forEach((link) => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault();
+    history.replaceState(null, "", link.getAttribute("href"));
+    openReviewPicker();
+  });
+});
+
+reviewPickerClose?.addEventListener("click", closeReviewPicker);
+reviewPicker?.addEventListener("click", (event) => {
+  if (event.target === reviewPicker) closeReviewPicker();
+});
+reviewPicker?.querySelector("[data-open-gallery]")?.addEventListener("click", () => {
+  closeReviewPicker();
+  history.replaceState(null, "", "#work-review");
+  openGallery("review");
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  if (reviewPicker && !reviewPicker.hidden) closeReviewPicker();
+});
+
+const hashKey = location.hash === "#work-yuqing" ? "yuqing" : null;
 if (hashKey) openGallery(hashKey);
+if (location.hash === "#work-review") openReviewPicker();
 
 document.querySelectorAll("[data-copy]").forEach((btn) => {
   btn.addEventListener("click", async () => {
@@ -332,7 +374,7 @@ function spawnPops(x, y, count = 5) {
 }
 
 document.addEventListener("click", (event) => {
-  if (event.target.closest(".work-viewer, .topbar, .site-buddy")) return;
+  if (event.target.closest(".work-viewer, .topbar, .site-buddy, #review-picker")) return;
   spawnPops(event.clientX, event.clientY, 4);
 });
 
