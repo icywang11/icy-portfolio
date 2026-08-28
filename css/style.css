@@ -568,19 +568,36 @@ img { display: block; max-width: 100%; }
 
 .lyric-line {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1px 2px;
-  margin: 6px 0 20px;
-  font-family: "Fredoka", "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: clamp(18px, 3.4vw, 24px);
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  line-height: 1.6;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0 22px;
+  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
+  font-size: clamp(20px, 3.6vw, 26px);
+  font-weight: 700;
+  color: #7eb8cc;
+  letter-spacing: 0.18em;
 }
 
-.lyric-line .bounce-letter {
-  text-shadow: 1px 1px 0 #fff;
+.lyric-row {
+  display: flex;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.lyric-row span {
+  display: inline-block;
+  animation: lyricBounce 2.4s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.08s);
+}
+
+.photo-quote {
+  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
+  font-size: 15px;
+  color: var(--ink-soft);
+  text-align: center;
+  margin-bottom: 18px;
+  letter-spacing: 0.06em;
 }
 
 .img-placeholder {
@@ -1147,6 +1164,11 @@ footer {
 @keyframes sparkle {
   0%, 100% { transform: scale(0.6); opacity: 0.35; }
   50% { transform: scale(1.2); opacity: 1; }
+}
+
+@keyframes lyricBounce {
+  0%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-6px); }
 }
 
 @keyframes letterBounce {
