@@ -13,7 +13,6 @@ OUTPUT = ROOT / "assets/ai"
 
 FILES = [
     "yuqing-map.png",
-    "review-improve.png",
 ]
 
 
