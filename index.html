@@ -9,15 +9,15 @@
 </head>
 <body>
   <header class="topbar">
-    <div class="topbar-inner shell" style="width:100%;">
+    <div class="topbar-inner">
       <a class="brand" href="#icy">Icy <span>♡</span></a>
       <nav class="nav" aria-label="导航">
         <a href="#intro">关于</a>
         <a href="#interests">兴趣</a>
         <a href="#internship">实习</a>
         <a href="#gaming">游戏</a>
-        <a href="#skills">技能</a>
-        <a href="#writing">阅读</a>
+        <a href="#skills">AI使用</a>
+        <a href="#writing">阅读写作</a>
         <a href="#contact">联系</a>
       </nav>
       <div style="display:flex;gap:8px;align-items:center;">
@@ -58,6 +58,18 @@
           <span class="bounce-letter c4" style="--i:14">o</span>
         </h1>
         <p class="icy-jp">ようこそ · いらっしゃい ♡</p>
+
+        <div class="hero-contact">
+          <button class="hero-contact-btn" type="button" data-copy="Wycrrika" data-toast="微信号已复制，请打开微信搜索添加">
+            <img src="assets/sanrio/cinna-1.gif" alt="" class="hero-contact-icon" />
+            <span>微信 Wycrrika</span>
+          </button>
+          <a class="hero-contact-btn" href="mailto:wycsdu0516@163.com">
+            <img src="assets/sanrio/cinna-2.gif" alt="" class="hero-contact-icon" />
+            <span>wycsdu0516@163.com</span>
+          </a>
+        </div>
+
         <a class="icy-scroll" href="#intro"><span>SCROLL</span><span>↓</span></a>
       </div>
     </section>
@@ -65,56 +77,52 @@
     <!-- 第二页 -->
     <section class="page page-intro" id="intro">
       <div class="shell page-inner">
-        <div class="intro-card">
-          <div class="intro-header">
-            <div class="avatar-wrap">
+        <div class="journal-sheet">
+          <div class="journal-top">
+            <div class="avatar-wrap journal-avatar">
               <img src="assets/avatar.svg" alt="Icy" />
             </div>
-            <div class="intro-text">
+            <div class="journal-intro">
+              <p class="journal-label">About Me · 自己紹介</p>
               <h2>你好，我是 <em>Icy</em></h2>
-              <p>海外运营 · 内容 · 数据。喜欢把游戏、音乐和旅行融进日常，用数据和文字记录每一次尝试。</p>
-              <div class="tags">
-                <span class="tag">海外运营</span>
-                <span class="tag">数据分析</span>
-                <span class="tag">文案撰写</span>
-                <span class="tag">日语</span>
-              </div>
-              <div class="mini-contact">
-                <button class="mini-btn" type="button" data-copy="Wycrrika" data-toast="微信号已复制">微信 Wycrrika</button>
-                <a class="mini-btn" href="mailto:wycsdu0516@163.com" style="text-decoration:none;display:inline-flex;align-items:center;">📮 邮箱</a>
+              <p>海外运营 · 内容 · 数据。喜欢把游戏、音乐和旅行融进日常。</p>
+              <div class="journal-tags">
+                <span>海外运营</span><span>数据分析</span><span>文案</span><span>日语</span>
               </div>
             </div>
           </div>
 
-          <div class="jump-title">
-            <h3>快速跳转 ♡</h3>
-            <p>选择你想了解的部分</p>
+          <div class="journal-divider">
+            <img src="assets/sanrio/cinna-3.gif" alt="" class="divider-mascot" />
+            <h3>来了解我吧～</h3>
+            <p>点击玉桂狗卡片，看看我的故事</p>
           </div>
+
           <nav class="jump-grid" aria-label="快速跳转">
             <a class="jump-card" href="#interests">
-              <span class="jump-icon">🌈</span>
+              <div class="jump-mascot"><img src="assets/sanrio/cinna-1.gif" alt="玉桂狗" /></div>
               <span class="jump-label">兴趣爱好</span>
               <span class="jump-desc">游戏·音乐·摄影·旅游</span>
             </a>
             <a class="jump-card" href="#internship">
-              <span class="jump-icon">💼</span>
+              <div class="jump-mascot"><img src="assets/sanrio/cinna-2.gif" alt="玉桂狗" /></div>
               <span class="jump-label">实习经历</span>
-              <span class="jump-desc">网易·得物</span>
+              <span class="jump-desc">网易 · 得物</span>
             </a>
             <a class="jump-card" href="#gaming">
-              <span class="jump-icon">🎮</span>
+              <div class="jump-mascot"><img src="assets/sanrio/cinna-3.gif" alt="玉桂狗" /></div>
               <span class="jump-label">游戏经历</span>
               <span class="jump-desc">深度体验记录</span>
             </a>
             <a class="jump-card" href="#skills">
-              <span class="jump-icon">📊</span>
-              <span class="jump-label">数据 & AI</span>
-              <span class="jump-desc">分析与工具</span>
+              <div class="jump-mascot"><img src="assets/sanrio/cinna-4.gif" alt="玉桂狗" /></div>
+              <span class="jump-label">AI 使用</span>
+              <span class="jump-desc">工具与自动化</span>
             </a>
             <a class="jump-card" href="#writing">
-              <span class="jump-icon">✍️</span>
-              <span class="jump-label">阅读 & 文案</span>
-              <span class="jump-desc">书本与撰写</span>
+              <div class="jump-mascot"><img src="assets/sanrio/cinna-5.gif" alt="玉桂狗" /></div>
+              <span class="jump-label">阅读写作</span>
+              <span class="jump-desc">书本与表达</span>
             </a>
           </nav>
         </div>
@@ -128,18 +136,61 @@
           <div class="section-head">
             <span class="page-num">01 / HOBBY</span>
             <h2>兴趣 <em>爱好</em></h2>
-            <p>打游戏、听音乐、摄影、旅游。</p>
+            <p>点击下面的小卡片，进入对应板块（图片位置已留好，等你上传）。</p>
           </div>
-          <div class="hobby-grid">
-            <article class="hobby-item"><span class="emoji">🎮</span><h3>打游戏</h3><p>MOBA、开放世界、竞速——见下方游戏经历。</p></article>
-            <article class="hobby-item"><span class="emoji">🎵</span><h3>听音乐</h3><p>工作和学习时的背景音，也喜欢现场氛围。</p></article>
-            <article class="hobby-item"><span class="emoji">📷</span><h3>摄影</h3><p>记录城市街角与日常光影。</p></article>
-            <article class="hobby-item"><span class="emoji">✈️</span><h3>旅游</h3><p>在不同城市收集灵感。</p></article>
-          </div>
-          <div class="photo-grid">
-            <figure class="photo-card"><img src="assets/photo-1.svg" alt="摄影" /><figcaption>城市漫步</figcaption></figure>
-            <figure class="photo-card"><img src="assets/photo-2.svg" alt="旅行" /><figcaption>旅途风景</figcaption></figure>
-            <figure class="photo-card"><img src="assets/photo-3.svg" alt="日常" /><figcaption>日常瞬间</figcaption></figure>
+
+          <nav class="hobby-nav" aria-label="爱好分类">
+            <a class="hobby-nav-card" href="#hobby-gaming">
+              <img src="assets/sanrio/cinna-1.gif" alt="" />
+              <span>打游戏</span>
+            </a>
+            <a class="hobby-nav-card" href="#hobby-music">
+              <img src="assets/sanrio/cinna-2.gif" alt="" />
+              <span>听音乐</span>
+            </a>
+            <a class="hobby-nav-card" href="#hobby-photo">
+              <img src="assets/sanrio/cinna-3.gif" alt="" />
+              <span>摄影</span>
+            </a>
+            <a class="hobby-nav-card" href="#hobby-travel">
+              <img src="assets/sanrio/cinna-4.gif" alt="" />
+              <span>旅游</span>
+            </a>
+          </nav>
+
+          <div class="hobby-details">
+            <article class="hobby-detail" id="hobby-gaming">
+              <h3>🎮 打游戏</h3>
+              <p>MOBA、开放世界、竞速——更多详见「游戏经历」板块。</p>
+              <div class="img-placeholder">
+                <img src="assets/photo-1.svg" alt="占位图" />
+                <p>图片占位区 · 替换为 assets/hobbies/gaming.jpg</p>
+              </div>
+            </article>
+            <article class="hobby-detail" id="hobby-music">
+              <h3>🎵 听音乐</h3>
+              <p>工作和学习时的背景音，也喜欢现场氛围。</p>
+              <div class="img-placeholder">
+                <img src="assets/photo-2.svg" alt="占位图" />
+                <p>图片占位区 · 替换为 assets/hobbies/music.jpg</p>
+              </div>
+            </article>
+            <article class="hobby-detail" id="hobby-photo">
+              <h3>📷 摄影</h3>
+              <p>记录城市街角与日常光影。</p>
+              <div class="img-placeholder">
+                <img src="assets/photo-3.svg" alt="占位图" />
+                <p>图片占位区 · 替换为 assets/hobbies/photo.jpg</p>
+              </div>
+            </article>
+            <article class="hobby-detail" id="hobby-travel">
+              <h3>✈️ 旅游</h3>
+              <p>在不同城市收集灵感。</p>
+              <div class="img-placeholder">
+                <img src="assets/photo-1.svg" alt="占位图" />
+                <p>图片占位区 · 替换为 assets/hobbies/travel.jpg</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -337,8 +388,8 @@
         <div class="section-card">
           <div class="section-head">
             <span class="page-num">04 / SKILLS</span>
-            <h2>数据 & <em>AI 能力</em></h2>
-            <p>数据分析、舆情处理与 AI 工具使用。</p>
+            <h2>AI <em>使用</em></h2>
+            <p>AI 工具与自动化能力。</p>
           </div>
           <div class="skills-split">
             <div class="skills-block">
@@ -371,7 +422,7 @@
         <div class="section-card alt">
           <div class="section-head">
             <span class="page-num">05 / WRITING</span>
-            <h2>阅读 & <em>文案</em></h2>
+            <h2>阅读 <em>写作</em></h2>
             <p>从书本里吸收认知，再用文字表达想法。</p>
           </div>
           <div class="writing-grid">
