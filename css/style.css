@@ -132,6 +132,19 @@ img { display: block; max-width: 100%; }
   position: relative;
 }
 
+.page-hobby {
+  min-height: auto;
+  padding: 88px 0 36px;
+}
+
+.page-hobby .section-head {
+  margin-bottom: 14px;
+}
+
+.page-hobby .section-head h2 {
+  margin-bottom: 4px;
+}
+
 .page-inner {
   min-height: calc(100vh - 160px);
   display: flex;
@@ -538,82 +551,89 @@ img { display: block; max-width: 100%; }
 .hobby-nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-bottom: 32px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .hobby-nav-card {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  gap: 10px;
-  padding: 18px 12px;
-  border-radius: 22px;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 999px;
   background: #fff;
   border: 2px solid #fff;
   box-shadow: var(--shadow-soft);
   transition: transform 0.25s, background 0.25s;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .hobby-icon {
-  width: 56px;
-  height: 56px;
+  width: 28px;
+  height: 28px;
   display: grid;
   place-items: center;
   border-radius: 50%;
   background: var(--sky-light);
   border: 2px solid #fff;
-  font-size: 24px;
+  font-size: 14px;
   line-height: 1;
+  flex-shrink: 0;
 }
 
-.hobby-nav-card:hover {
-  transform: translateY(-5px);
+.hobby-nav-card:hover,
+.hobby-nav-card.is-active {
+  transform: translateY(-3px);
   background: var(--pink-soft);
 }
 
 .hobby-nav-card span:last-child {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 700;
   color: var(--ink-deep);
 }
 
-.hobby-details { display: grid; gap: 24px; }
+.hobby-details { display: block; }
 
 .hobby-detail {
-  padding: 24px;
-  border-radius: 22px;
+  display: none;
+  padding: 8px 8px 6px;
+  border-radius: 18px;
   background: #fff;
   border: 2px dashed var(--blue-soft);
   scroll-margin-top: 90px;
 }
 
+.hobby-detail.is-active { display: block; }
+
 .hobby-detail h3 {
-  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  color: #8ec5d8;
-  margin-bottom: 8px;
-  letter-spacing: 0.06em;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 
 .hobby-detail > p {
   font-size: 13px;
   color: var(--ink-soft);
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .lyric-line {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  margin: 8px 0 22px;
+  gap: 0;
+  margin: 0 0 8px;
   font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: clamp(20px, 3.6vw, 26px);
+  font-size: clamp(13px, 2vw, 16px);
   font-weight: 700;
   color: #7eb8cc;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.12em;
 }
 
 .lyric-row {
@@ -629,8 +649,8 @@ img { display: block; max-width: 100%; }
 }
 
 .lyric-line--soft {
-  font-size: clamp(16px, 3vw, 20px);
-  letter-spacing: 0.08em;
+  font-size: clamp(12px, 2vw, 15px);
+  letter-spacing: 0.06em;
 }
 
 .img-placeholder {
@@ -685,15 +705,15 @@ img { display: block; max-width: 100%; }
 
 .slider-slide img {
   width: 100%;
-  height: min(62vh, 520px);
+  height: min(28vh, 200px);
   object-fit: contain;
   background: linear-gradient(180deg, #eaf8ff, #fff);
 }
 
 .slider-slide figcaption {
-  padding: 12px 16px 16px;
+  padding: 6px 12px 8px;
   text-align: center;
-  font-size: 13px;
+  font-size: 12px;
   color: var(--ink-deep);
   font-weight: 700;
 }
@@ -1753,7 +1773,10 @@ footer {
   .journal-avatar { width: 128px; }
   .jump-card { width: calc(50% - 10px); min-width: 120px; }
   .jump-card:last-child { width: calc(50% - 10px); }
-  .hobby-nav { grid-template-columns: 1fr; }
+  .hobby-nav { grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .hobby-nav-card { padding: 7px 4px; gap: 4px; }
+  .hobby-nav-card span:last-child { font-size: 11px; }
+  .hobby-icon { width: 22px; height: 22px; font-size: 12px; }
   .skills-split, .writing-grid, .photo-grid { grid-template-columns: 1fr; }
   .skill-jump, .skill-item { grid-template-columns: 40px 1fr; }
   .skill-jump-go { display: none; }
