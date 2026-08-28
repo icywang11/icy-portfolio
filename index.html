@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=4" />
+  <link rel="stylesheet" href="css/style.css?v=5" />
 </head>
 <body>
   <header class="topbar">
@@ -196,10 +196,37 @@
             </article>
             <article class="hobby-detail" id="hobby-photo">
               <h3>📷 摄影</h3>
-              <p>记录城市街角与日常光影。</p>
-              <div class="img-placeholder">
-                <img src="assets/photo-3.svg" alt="占位图" />
-                <p>图片占位区 · 替换为 assets/hobbies/photo.jpg</p>
+              <p>海边、树影、晚霞，把路过的光先收进相机里。</p>
+              <div class="album-slider" data-slider>
+                <button class="slider-btn prev" type="button" aria-label="上一张">‹</button>
+                <div class="slider-track" tabindex="0">
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/01-coast.jpg" alt="海边礁石" />
+                    <figcaption>海边</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/02-leaves.jpg" alt="树影与海" />
+                    <figcaption>树影</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/03-sunset.jpg" alt="晚霞与桥" />
+                    <figcaption>晚霞</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/04-night.jpg" alt="江岸夜色" />
+                    <figcaption>夜色</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/05-roof.jpg" alt="屋檐" />
+                    <figcaption>屋檐</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/photo/06-breakwater.jpg" alt="防波堤" />
+                    <figcaption>防波堤</figcaption>
+                  </figure>
+                </div>
+                <button class="slider-btn next" type="button" aria-label="下一张">›</button>
+                <div class="slider-dots" role="tablist" aria-label="相册页码"></div>
               </div>
             </article>
             <article class="hobby-detail" id="hobby-travel">
