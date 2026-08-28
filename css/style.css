@@ -337,19 +337,18 @@ img { display: block; max-width: 100%; }
 }
 
 .journal-top {
-  display: grid;
-  grid-template-columns: 100px minmax(0, 1fr);
-  gap: 56px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  gap: 22px;
   margin-bottom: 32px;
   padding-top: 12px;
-  padding-left: 4px;
 }
 
 .journal-avatar {
-  width: 100px;
+  width: 148px;
   margin: 0;
-  justify-self: start;
   flex-shrink: 0;
 }
 
@@ -357,14 +356,12 @@ img { display: block; max-width: 100%; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
-  transform: scale(1.1) translateY(-28%);
+  object-position: center 32%;
 }
 
 .journal-intro {
-  min-width: 0;
-  position: relative;
-  z-index: 2;
+  width: 100%;
+  max-width: 560px;
 }
 
 .journal-label {
@@ -392,6 +389,7 @@ img { display: block; max-width: 100%; }
 .journal-tags {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
   margin-top: 14px;
 }
@@ -1089,11 +1087,8 @@ footer {
     z-index: 99;
   }
 
-  .journal-top { grid-template-columns: 1fr; text-align: center; justify-items: center; gap: 20px; padding-left: 0; }
-  .journal-intro { width: 100%; }
-  .journal-avatar { width: 108px; justify-self: center; }
-  .journal-avatar img { transform: scale(1.08) translateY(-22%); }
   .journal-sheet { padding: 32px 20px 36px; }
+  .journal-avatar { width: 128px; }
   .jump-card { width: calc(50% - 10px); min-width: 120px; }
   .jump-card:last-child { width: calc(50% - 10px); }
   .hobby-nav { grid-template-columns: repeat(2, 1fr); }
