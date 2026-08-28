@@ -845,6 +845,50 @@ img { display: block; max-width: 100%; }
   font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
   font-size: 14px;
   color: var(--ink-soft);
+  overflow: visible;
+}
+
+.drop-count {
+  display: inline-flex;
+  align-items: flex-end;
+  position: relative;
+  margin: 0 1px;
+  vertical-align: -2px;
+  min-width: 0.7em;
+  height: 1.15em;
+}
+
+.drop-count-num {
+  display: inline-block;
+  font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
+  font-size: 1.9em;
+  font-weight: 700;
+  line-height: 0.8;
+  color: #5aa8c8;
+  text-shadow: 0 4px 0 rgba(158, 214, 236, 0.45);
+  transform-origin: 50% 100%;
+}
+
+.drop-count.is-drop .drop-count-num {
+  animation: countDrop 0.95s cubic-bezier(0.18, 1.35, 0.32, 1) both;
+}
+
+@keyframes countDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-72px) rotate(-18deg) scale(0.55);
+  }
+  58% {
+    opacity: 1;
+    transform: translateY(5px) rotate(6deg) scale(1.18, 0.86);
+  }
+  76% {
+    transform: translateY(-8px) rotate(-3deg) scale(0.96, 1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0) scale(1);
+  }
 }
 
 .avatar-wrap {
@@ -1593,7 +1637,7 @@ img { display: block; max-width: 100%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .author-track, .site-buddy, .jump-mascot, .click-pop { animation: none; }
+  .author-track, .site-buddy, .jump-mascot, .click-pop, .drop-count-num { animation: none; }
 }
 
 .copy-quote {

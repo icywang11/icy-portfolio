@@ -384,3 +384,27 @@ if (buddy && buddyBubble) {
     buddyTimer = setTimeout(() => buddy.classList.remove("is-talking"), 2400);
   });
 }
+
+const dropCounts = document.querySelectorAll("[data-drop-count]");
+if (dropCounts.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  const replayDrop = (el) => {
+    el.classList.remove("is-drop");
+    void el.offsetWidth;
+    el.classList.add("is-drop");
+  };
+
+  const dropObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
+          replayDrop(entry.target);
+        } else {
+          entry.target.classList.remove("is-drop");
+        }
+      });
+    },
+    { threshold: [0, 0.35, 0.7] }
+  );
+
+  dropCounts.forEach((el) => dropObserver.observe(el));
+}
