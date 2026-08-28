@@ -40,9 +40,7 @@ const GALLERIES = {
     kicker: "AI 使用 · 数据分析",
     title: "活动数据复盘优化",
     slides: [
-      { src: "assets/ai/review-improve.png", caption: "1. 活动数据优化", alt: "社区数据优化思维导图：本社区数据、解决方案、预期目标与其他产品参考" },
-      { src: "assets/ai/review-data.png", caption: "2. 原来数据", alt: "DC社区活动中奖者重复情况分析" },
-      { src: "assets/ai/yuqing-map.png", caption: "3. 舆情分析", alt: "舆情分析流程图" }
+      { src: "assets/ai/review-improve.png", caption: "活动数据优化", alt: "社区数据优化思维导图：本社区数据、解决方案、预期目标与其他产品参考" }
     ]
   }
 };
