@@ -1374,6 +1374,60 @@ img { display: block; max-width: 100%; }
 .book-card li:last-child, .copy-card li:last-child { border-bottom: 0; }
 .book-card strong, .copy-card strong { color: var(--ink-deep); }
 
+.author-banner {
+  overflow: hidden;
+  border-radius: 22px;
+  padding: 16px 0 14px;
+  background: linear-gradient(90deg, #ffe8f0 0%, #eaf8ff 48%, #fff9ee 100%);
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.author-track {
+  display: flex;
+  width: max-content;
+  gap: 8px 4px;
+  animation: authorScroll 36s linear infinite;
+}
+
+.author-banner:hover .author-track { animation-play-state: paused; }
+
+.author-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 88px;
+  margin: 0 6px;
+  flex: 0 0 auto;
+}
+
+.author-chip img {
+  width: 62px;
+  height: 62px;
+  object-fit: cover;
+  object-position: center 18%;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 6px 14px rgba(110, 184, 212, 0.2);
+  background: #fff;
+}
+
+.author-chip figcaption {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-deep);
+}
+
+@keyframes authorScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .author-track { animation: none; }
+}
+
 .copy-quote {
   padding: 22px 24px;
   border-radius: 18px;
