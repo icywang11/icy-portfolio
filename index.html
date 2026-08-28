@@ -1,12 +1,21 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-build="55">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=54" />
+  <link rel="stylesheet" href="css/style.css?v=55" />
+  <style>
+    @font-face {
+      font-family: "Bagel Fat One";
+      src: url("assets/fonts/BagelFatOne-4.woff2?v=55") format("woff2");
+      font-display: swap;
+    }
+  </style>
 </head>
 <body>
   <header class="topbar">
@@ -659,6 +668,46 @@
       <div class="work-viewer-dots" id="work-viewer-dots"></div>
     </div>
   </div>
-  <script src="js/main.js?v=54"></script>
+  <script>
+    (function () {
+      if (window.__icyDrop) return;
+      window.__icyDrop = true;
+      var el = document.querySelector("[data-drop-count]");
+      var section = document.getElementById("ai-works");
+      var num = el && el.querySelector(".drop-count-num");
+      if (!el || !section || !num) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+      var looping = false;
+      var hold;
+      function play() {
+        el.classList.remove("is-drop");
+        el.classList.add("is-waiting");
+        void el.offsetWidth;
+        el.classList.remove("is-waiting");
+        el.classList.add("is-drop");
+      }
+      num.addEventListener("animationend", function (event) {
+        if (event.animationName !== "countDrop" || !looping) return;
+        clearTimeout(hold);
+        hold = setTimeout(play, 1800);
+      });
+      el.classList.add("is-waiting");
+      new IntersectionObserver(function (entries) {
+        var visible = entries.some(function (entry) {
+          return entry.isIntersecting && entry.intersectionRatio >= 0.18;
+        });
+        if (visible && !looping) {
+          looping = true;
+          play();
+        } else if (!visible && looping) {
+          looping = false;
+          clearTimeout(hold);
+          el.classList.remove("is-drop");
+          el.classList.add("is-waiting");
+        }
+      }, { threshold: [0, 0.18, 0.4, 0.7] }).observe(section);
+    })();
+  </script>
+  <script src="js/main.js?v=55"></script>
 </body>
 </html>

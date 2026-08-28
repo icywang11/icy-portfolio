@@ -389,7 +389,8 @@ const dropCount = document.querySelector("[data-drop-count]");
 const dropSection = document.getElementById("ai-works");
 const dropNum = dropCount?.querySelector(".drop-count-num");
 
-if (dropCount && dropSection && dropNum && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+if (dropCount && dropSection && dropNum && !window.__icyDrop && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  window.__icyDrop = true;
   let dropLooping = false;
   let dropHold;
 

@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "Bagel Fat One";
+  src: url("../assets/fonts/BagelFatOne-4.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
   --sky: #d4f1fb;
@@ -869,7 +877,7 @@ img { display: block; max-width: 100%; }
   position: absolute;
   left: 50%;
   bottom: -0.08em;
-  font-family: "Bagel Fat One", "Fredoka", cursive;
+  font-family: "Bagel Fat One", "Arial Black", Impact, cursive;
   font-size: 1.9em;
   font-weight: 400;
   line-height: 0.8;
