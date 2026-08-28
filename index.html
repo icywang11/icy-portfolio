@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=2" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
 </head>
 <body>
   <header class="topbar">
@@ -143,10 +143,41 @@
           <div class="hobby-details">
             <article class="hobby-detail" id="hobby-music">
               <h3>🎵 听音乐</h3>
-              <p>工作和学习时的背景音，也喜欢现场氛围。</p>
-              <div class="img-placeholder">
-                <img src="assets/photo-2.svg" alt="占位图" />
-                <p>图片占位区 · 替换为 assets/hobbies/music.jpg</p>
+              <p>从宇多田光到周杰伦，从 G-DRAGON 到 BLACKPINK。左右滑动看看我常听的那些人。</p>
+              <div class="album-slider" data-slider>
+                <button class="slider-btn prev" type="button" aria-label="上一张">‹</button>
+                <div class="slider-track" tabindex="0">
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/01-gdragon.jpg" alt="G-DRAGON Übermensch 世界巡演票根" />
+                    <figcaption>G-DRAGON · Übermensch World Tour</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/02-utada.jpg" alt="宇多田光 First Love" />
+                    <figcaption>宇多田光 · First Love</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/03-groupies.jpg" alt="groupies" />
+                    <figcaption>groupies</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/04-jay.jpg" alt="周杰伦" />
+                    <figcaption>周杰伦</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/05-crowd-lu.jpg" alt="卢广仲" />
+                    <figcaption>卢广仲</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/06-avril.jpg" alt="Avril Lavigne" />
+                    <figcaption>Avril Lavigne</figcaption>
+                  </figure>
+                  <figure class="slider-slide">
+                    <img src="assets/hobbies/music/07-blackpink.jpg" alt="BLACKPINK" />
+                    <figcaption>BLACKPINK</figcaption>
+                  </figure>
+                </div>
+                <button class="slider-btn next" type="button" aria-label="下一张">›</button>
+                <div class="slider-dots" role="tablist" aria-label="相册页码"></div>
               </div>
             </article>
             <article class="hobby-detail" id="hobby-photo">
@@ -435,6 +466,6 @@
 
   <footer><p>© <span id="year"></span> Icy · My Little Portfolio ♡</p></footer>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="js/main.js"></script>
+  <script src="js/main.js?v=3"></script>
 </body>
 </html>

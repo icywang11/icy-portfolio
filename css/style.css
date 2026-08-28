@@ -589,6 +589,90 @@ img { display: block; max-width: 100%; }
   background: #fff;
 }
 
+.album-slider {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: var(--shadow-soft);
+}
+
+.slider-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.slider-track::-webkit-scrollbar { display: none; }
+
+.slider-slide {
+  min-width: 100%;
+  scroll-snap-align: start;
+  margin: 0;
+  background: #eaf8ff;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: min(62vh, 520px);
+  object-fit: contain;
+  background: linear-gradient(180deg, #eaf8ff, #fff);
+}
+
+.slider-slide figcaption {
+  padding: 12px 16px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--ink-deep);
+  font-weight: 700;
+}
+
+.slider-btn {
+  position: absolute;
+  top: calc(50% - 28px);
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink-deep);
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+.slider-btn:hover { background: var(--pink-soft); }
+
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 16px 16px;
+}
+
+.slider-dots button {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  cursor: pointer;
+}
+
+.slider-dots button.active {
+  width: 22px;
+  background: var(--blue);
+}
+
 /* 内容板块 */
 .section-card {
   background: rgba(255, 255, 255, 0.92);

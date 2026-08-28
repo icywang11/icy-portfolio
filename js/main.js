@@ -53,3 +53,56 @@ if (menuBtn && nav) {
     link.addEventListener("click", () => nav.classList.remove("open"));
   });
 }
+
+document.querySelectorAll("[data-slider]").forEach((slider) => {
+  const track = slider.querySelector(".slider-track");
+  const slides = [...slider.querySelectorAll(".slider-slide")];
+  const prev = slider.querySelector(".slider-btn.prev");
+  const next = slider.querySelector(".slider-btn.next");
+  const dotsWrap = slider.querySelector(".slider-dots");
+  if (!track || slides.length === 0) return;
+
+  const dots = slides.map((_, i) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.setAttribute("aria-label", `第 ${i + 1} 张`);
+    btn.addEventListener("click", () => {
+      track.scrollTo({ left: slides[i].offsetLeft, behavior: "smooth" });
+    });
+    dotsWrap.appendChild(btn);
+    return btn;
+  });
+
+  function currentIndex() {
+    const x = track.scrollLeft;
+    let best = 0;
+    let dist = Infinity;
+    slides.forEach((slide, i) => {
+      const d = Math.abs(slide.offsetLeft - x);
+      if (d < dist) {
+        dist = d;
+        best = i;
+      }
+    });
+    return best;
+  }
+
+  function go(delta) {
+    const i = Math.min(slides.length - 1, Math.max(0, currentIndex() + delta));
+    track.scrollTo({ left: slides[i].offsetLeft, behavior: "smooth" });
+  }
+
+  function syncDots() {
+    const i = currentIndex();
+    dots.forEach((dot, idx) => dot.classList.toggle("active", idx === i));
+  }
+
+  prev.addEventListener("click", () => go(-1));
+  next.addEventListener("click", () => go(1));
+  track.addEventListener("scroll", () => requestAnimationFrame(syncDots), { passive: true });
+  track.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") go(-1);
+    if (event.key === "ArrowRight") go(1);
+  });
+  syncDots();
+});
