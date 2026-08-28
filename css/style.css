@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
 
 :root {
   --sky: #d4f1fb;
@@ -807,13 +807,14 @@ img { display: block; max-width: 100%; }
   border-radius: var(--radius);
   padding: 44px;
   box-shadow: var(--shadow);
+  overflow: visible;
 }
 
 .section-card.alt {
   background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(232,248,255,0.9));
 }
 
-.section-head { margin-bottom: 32px; }
+.section-head { margin-bottom: 32px; overflow: visible; }
 
 .section-head .page-num {
   display: inline-block;
@@ -851,43 +852,63 @@ img { display: block; max-width: 100%; }
 .works-lead {
   font-size: 16px;
   letter-spacing: 0.04em;
+  overflow: visible;
 }
 
 .drop-count {
   display: inline-block;
   position: relative;
-  margin: 0 0.06em;
-  vertical-align: baseline;
-  line-height: 1;
+  width: 1.15em;
+  height: 1em;
+  margin: 0 0.08em;
+  vertical-align: -0.12em;
+  overflow: visible;
 }
 
 .drop-count-num {
-  display: inline-block;
-  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: 1.55em;
-  font-weight: 700;
-  line-height: 1;
-  color: #2f6480;
-  vertical-align: -0.08em;
+  position: absolute;
+  left: 50%;
+  bottom: -0.08em;
+  font-family: "Bagel Fat One", "Fredoka", cursive;
+  font-size: 1.9em;
+  font-weight: 400;
+  line-height: 0.8;
+  color: #e45d8c;
+  -webkit-text-stroke: 1px #fff;
+  paint-order: stroke fill;
+  filter: drop-shadow(0 3px 0 #f4b3c8);
+  transform: translateX(-50%);
   transform-origin: 50% 100%;
+  pointer-events: none;
+}
+
+.drop-count.is-waiting .drop-count-num {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-220px) rotate(-24deg);
 }
 
 .drop-count.is-drop .drop-count-num {
-  animation: countDrop 0.8s cubic-bezier(0.22, 1.2, 0.36, 1) both;
+  animation: countDrop 1.25s cubic-bezier(0.16, 1.2, 0.32, 1) both;
 }
 
 @keyframes countDrop {
   0% {
-    opacity: 0;
-    transform: translateY(-42px);
-  }
-  72% {
     opacity: 1;
-    transform: translateY(2px);
+    transform: translateX(-50%) translateY(-220px) rotate(-28deg) scale(0.65);
+  }
+  58% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(8px) rotate(10deg) scale(1.18, 0.78);
+  }
+  74% {
+    transform: translateX(-50%) translateY(-16px) rotate(-6deg) scale(0.92, 1.12);
+  }
+  88% {
+    transform: translateX(-50%) translateY(4px) rotate(3deg) scale(1.06, 0.94);
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0) rotate(0deg) scale(1);
   }
 }
 

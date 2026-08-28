@@ -385,26 +385,44 @@ if (buddy && buddyBubble) {
   });
 }
 
-const dropCounts = document.querySelectorAll("[data-drop-count]");
-if (dropCounts.length && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  const replayDrop = (el) => {
-    el.classList.remove("is-drop");
-    void el.offsetWidth;
-    el.classList.add("is-drop");
+const dropCount = document.querySelector("[data-drop-count]");
+const dropSection = document.getElementById("ai-works");
+const dropNum = dropCount?.querySelector(".drop-count-num");
+
+if (dropCount && dropSection && dropNum && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  let dropLooping = false;
+  let dropHold;
+
+  const playDrop = () => {
+    dropCount.classList.remove("is-drop");
+    dropCount.classList.add("is-waiting");
+    void dropCount.offsetWidth;
+    dropCount.classList.remove("is-waiting");
+    dropCount.classList.add("is-drop");
   };
+
+  dropNum.addEventListener("animationend", (event) => {
+    if (event.animationName !== "countDrop" || !dropLooping) return;
+    clearTimeout(dropHold);
+    dropHold = setTimeout(playDrop, 1800);
+  });
 
   const dropObserver = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.35) {
-          replayDrop(entry.target);
-        } else {
-          entry.target.classList.remove("is-drop");
-        }
-      });
+      const visible = entries.some((entry) => entry.isIntersecting && entry.intersectionRatio >= 0.18);
+      if (visible && !dropLooping) {
+        dropLooping = true;
+        playDrop();
+      } else if (!visible && dropLooping) {
+        dropLooping = false;
+        clearTimeout(dropHold);
+        dropCount.classList.remove("is-drop");
+        dropCount.classList.add("is-waiting");
+      }
     },
-    { threshold: [0, 0.35, 0.7] }
+    { threshold: [0, 0.18, 0.4, 0.7] }
   );
 
-  dropCounts.forEach((el) => dropObserver.observe(el));
+  dropCount.classList.add("is-waiting");
+  dropObserver.observe(dropSection);
 }
