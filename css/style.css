@@ -848,46 +848,46 @@ img { display: block; max-width: 100%; }
   overflow: visible;
 }
 
+.works-lead {
+  font-size: 16px;
+  letter-spacing: 0.04em;
+}
+
 .drop-count {
-  display: inline-flex;
-  align-items: flex-end;
+  display: inline-block;
   position: relative;
-  margin: 0 1px;
-  vertical-align: -2px;
-  min-width: 0.7em;
-  height: 1.15em;
+  margin: 0 0.06em;
+  vertical-align: baseline;
+  line-height: 1;
 }
 
 .drop-count-num {
   display: inline-block;
-  font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
-  font-size: 1.9em;
+  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
+  font-size: 1.55em;
   font-weight: 700;
-  line-height: 0.8;
-  color: #5aa8c8;
-  text-shadow: 0 4px 0 rgba(158, 214, 236, 0.45);
+  line-height: 1;
+  color: #2f6480;
+  vertical-align: -0.08em;
   transform-origin: 50% 100%;
 }
 
 .drop-count.is-drop .drop-count-num {
-  animation: countDrop 0.95s cubic-bezier(0.18, 1.35, 0.32, 1) both;
+  animation: countDrop 0.8s cubic-bezier(0.22, 1.2, 0.36, 1) both;
 }
 
 @keyframes countDrop {
   0% {
     opacity: 0;
-    transform: translateY(-72px) rotate(-18deg) scale(0.55);
+    transform: translateY(-42px);
   }
-  58% {
+  72% {
     opacity: 1;
-    transform: translateY(5px) rotate(6deg) scale(1.18, 0.86);
-  }
-  76% {
-    transform: translateY(-8px) rotate(-3deg) scale(0.96, 1.08);
+    transform: translateY(2px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) rotate(0) scale(1);
+    transform: translateY(0);
   }
 }
 
