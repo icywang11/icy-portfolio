@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Fredoka:wght@400;500;600;700&family=M+PLUS+Rounded+1c:wght@400;500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap");
 
 @font-face {
   font-family: "Bagel Fat One";
@@ -9,24 +9,26 @@
 }
 
 :root {
-  --sky: #d4f1fb;
-  --sky-light: #eaf8ff;
-  --sky-deep: #9fd4eb;
-  --blue: #6eb8d4;
-  --blue-soft: #b8e4f4;
-  --pink: #f8b4cc;
-  --pink-soft: #ffe8f0;
-  --cream: #fff9ee;
-  --yellow: #ffe9a8;
-  --lavender: #ddd0f5;
-  --ink: #5a7f8f;
-  --ink-deep: #3f6678;
-  --ink-soft: #7a9aa8;
+  --sky: #e6eef2;
+  --sky-light: #f4f7f8;
+  --sky-deep: #b7c6ce;
+  --blue: #6d8b99;
+  --blue-soft: #c8d5dc;
+  --pink: #c9899a;
+  --pink-soft: #f3e7eb;
+  --cream: #f6f1ea;
+  --yellow: #e6d5b3;
+  --lavender: #d4ccd9;
+  --ink: #4a5560;
+  --ink-deep: #2c333a;
+  --ink-soft: #7a858e;
   --white: #ffffff;
-  --shadow: 0 16px 40px rgba(110, 184, 212, 0.18);
-  --shadow-soft: 0 8px 24px rgba(110, 184, 212, 0.12);
-  --max: 1000px;
-  --radius: 28px;
+  --shadow: 0 22px 48px rgba(44, 51, 58, 0.08);
+  --shadow-soft: 0 10px 24px rgba(44, 51, 58, 0.06);
+  --max: 1040px;
+  --radius: 20px;
+  --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Songti SC", "STSong", Georgia, serif;
+  --sans: "Zen Maru Gothic", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,8 +37,11 @@ html { scroll-behavior: smooth; scroll-snap-type: y proximity; }
 
 body {
   color: var(--ink);
-  font-family: "M PLUS Rounded 1c", "Zen Maru Gothic", "Microsoft YaHei", sans-serif;
-  background: linear-gradient(135deg, #d9f4f8 0%, #f6edf8 52%, #fff7dc 100%);
+  font-family: var(--sans);
+  background:
+    radial-gradient(1200px 480px at 80% -10%, rgba(201, 137, 154, 0.12), transparent 55%),
+    radial-gradient(900px 420px at -10% 110%, rgba(109, 139, 153, 0.16), transparent 50%),
+    linear-gradient(180deg, #eef2f4 0%, #f6f1ea 46%, #e9eef1 100%);
   overflow-x: hidden;
   line-height: 1.8;
 }
@@ -75,11 +80,11 @@ img { display: block; max-width: 100%; }
   transform: translateX(-50%);
   z-index: 100;
   width: min(var(--max), calc(100% - 32px));
-  background: rgba(255, 255, 255, 0.88);
-  border: 2px solid #fff;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 999px;
   box-shadow: var(--shadow-soft);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(18px);
 }
 
 .topbar-inner {
@@ -93,11 +98,11 @@ img { display: block; max-width: 100%; }
 }
 
 .brand {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-weight: 700;
-  font-size: 15px;
-  color: var(--blue);
-  letter-spacing: 0.14em;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--ink-deep);
+  letter-spacing: 0.04em;
 }
 
 .brand span { color: var(--pink); }
@@ -200,9 +205,8 @@ img { display: block; max-width: 100%; }
   place-items: center;
   overflow: hidden;
   background:
-    radial-gradient(circle at 20% 80%, rgba(255, 232, 240, 0.7) 0%, transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(255, 249, 238, 0.8) 0%, transparent 35%),
-    linear-gradient(165deg, #a8dff0 0%, #d4f1fb 40%, #eef9ff 100%);
+    radial-gradient(circle at 18% 78%, rgba(201, 137, 154, 0.16) 0%, transparent 36%),
+    linear-gradient(180deg, #dfe8ec 0%, #eef3f5 42%, #f6f1ea 100%);
 }
 
 .icy-clouds {
@@ -305,62 +309,66 @@ img { display: block; max-width: 100%; }
 
 .icy-kicker {
   display: inline-block;
-  margin-bottom: 24px;
-  padding: 8px 18px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid #fff;
-  font-size: 11px;
-  letter-spacing: 0.28em;
+  margin-bottom: 22px;
+  padding: 0;
+  border: 0;
+  background: none;
+  box-shadow: none;
+  font-family: var(--sans);
+  font-size: 12px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
   color: var(--ink-soft);
-  box-shadow: var(--shadow-soft);
 }
 
 .portfolio-title {
-  font-family: "Fredoka", "Zen Maru Gothic", sans-serif;
-  font-size: clamp(42px, 9vw, 88px);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 16px;
+  font-family: var(--serif);
+  font-size: clamp(48px, 9vw, 92px);
+  font-weight: 600;
+  font-optical-sizing: auto;
+  line-height: 1.05;
+  margin-bottom: 18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2px 4px;
+  gap: 0 2px;
+  color: var(--ink-deep);
 }
 
 .icy-jp {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 13px;
-  color: #8eb5c4;
-  letter-spacing: 0.25em;
-  margin-bottom: 10px;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink-soft);
+  letter-spacing: 0.18em;
+  margin-bottom: 8px;
 }
 
 .icy-hint {
-  font-size: 12px;
-  color: #9bbdcb;
-  margin-bottom: 28px;
-  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: var(--ink-soft);
+  margin-bottom: 36px;
+  letter-spacing: 0.06em;
 }
 
 .bounce-letter {
   display: inline-block;
-  animation: letterBounce 2.2s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.12s);
-  text-shadow: 2px 2px 0 #fff;
+  color: inherit;
+  text-shadow: none;
   cursor: pointer;
+  animation: titleIn 0.9s ease both;
+  animation-delay: calc(var(--i) * 0.04s);
 }
 
 .bounce-letter.is-poke {
   animation: letterPoke 0.45s ease;
 }
 
-.bounce-letter.space { width: 0.35em; }
-.bounce-letter.c1 { color: #f8b4cc; }
-.bounce-letter.c2 { color: #6eb8d4; }
-.bounce-letter.c3 { color: #ffe9a8; }
-.bounce-letter.c4 { color: #c9b8f0; }
-.bounce-letter.c5 { color: #98d4e8; }
+.bounce-letter.space { width: 0.32em; }
+.bounce-letter.c1,
+.bounce-letter.c2,
+.bounce-letter.c3,
+.bounce-letter.c4,
+.bounce-letter.c5 { color: var(--ink-deep); }
 
 .icy-scroll {
   display: inline-flex;
@@ -376,15 +384,13 @@ img { display: block; max-width: 100%; }
 .icy-scroll span:last-child { font-size: 20px; }
 
 /* 第二页：手帐本 */
-.page-intro { background: linear-gradient(180deg, #eef9ff 0%, #f8fcff 100%); }
+.page-intro { background: linear-gradient(180deg, #f6f1ea 0%, #eef3f5 100%); }
 
 .journal-sheet {
-  background:
-    linear-gradient(#fff 0 0) padding-box,
-    repeating-linear-gradient(-45deg, var(--blue-soft) 0 6px, transparent 6px 14px) border-box;
-  border: 3px dashed var(--blue-soft);
-  border-radius: 32px;
-  padding: 40px 36px 44px;
+  background: rgba(255, 252, 248, 0.92);
+  border: 1px solid rgba(44, 51, 58, 0.08);
+  border-radius: 28px;
+  padding: 44px 40px 40px;
   box-shadow: var(--shadow);
   position: relative;
 }
@@ -392,14 +398,13 @@ img { display: block; max-width: 100%; }
 .journal-sheet::before {
   content: "";
   position: absolute;
-  top: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 14px;
-  background: var(--pink-soft);
-  border-radius: 4px;
-  opacity: 0.8;
+  top: 0;
+  left: 28px;
+  right: 28px;
+  height: 10px;
+  background: linear-gradient(90deg, #c9899a, #6d8b99);
+  border-radius: 0 0 8px 8px;
+  opacity: 0.85;
 }
 
 .journal-top {
@@ -460,8 +465,9 @@ img { display: block; max-width: 100%; }
 }
 
 .journal-intro h2 {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: clamp(26px, 4vw, 34px);
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 600;
   color: var(--ink-deep);
   margin-bottom: 10px;
 }
@@ -483,20 +489,27 @@ img { display: block; max-width: 100%; }
 }
 
 .journal-tags span {
-  padding: 4px 12px;
+  padding: 5px 12px;
   font-size: 11px;
-  color: var(--ink-soft);
-  background: var(--sky-light);
-  border-radius: 6px;
-  border: 1px dashed var(--blue-soft);
+  color: var(--ink);
+  background: var(--cream);
+  border-radius: 999px;
+  border: 1px solid rgba(44, 51, 58, 0.08);
 }
 
 .journal-divider {
   text-align: center;
-  margin-bottom: 28px;
-  padding: 20px 0 8px;
-  border-top: 2px dotted var(--blue-soft);
-  border-bottom: 2px dotted var(--blue-soft);
+  margin-bottom: 22px;
+  padding: 18px 0 4px;
+  border-top: 1px solid rgba(44, 51, 58, 0.08);
+}
+
+.journal-divider h3 {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--ink-deep);
+  margin-bottom: 6px;
 }
 
 .divider-mascot {
@@ -510,89 +523,157 @@ img { display: block; max-width: 100%; }
   background: #fff;
 }
 
-.journal-divider h3 {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 24px;
-  color: var(--ink-deep);
-  margin-bottom: 6px;
-}
-
 .journal-divider p {
   font-size: 13px;
   color: var(--ink-soft);
 }
 
-.jump-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
+.locker-wall {
+  position: relative;
+  padding: 18px 14px 22px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.25), transparent 18%),
+    repeating-linear-gradient(90deg, #c5d0d6 0 1px, #d5dee3 1px 18%);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.55), 0 16px 40px rgba(44, 51, 58, 0.1);
+  min-height: 280px;
 }
 
-.jump-card {
+.locker-hint {
+  position: relative;
+  z-index: 2;
+  margin: 0 6px 14px;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: #5d6b74;
+}
+
+.locker-bank {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.locker-door {
+  display: flex;
+  min-height: 220px;
+  padding: 16px 12px 18px;
+  border-radius: 6px 6px 10px 10px;
+  color: inherit;
+  background:
+    linear-gradient(180deg, #f4f7f8 0%, #d4dee4 46%, #c3ced5 100%);
+  border: 1px solid rgba(70, 86, 96, 0.28);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.7),
+    inset 0 -10px 16px rgba(70, 86, 96, 0.12),
+    0 10px 18px rgba(44, 51, 58, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.locker-door:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.8),
+    0 16px 28px rgba(44, 51, 58, 0.16);
+}
+
+.locker-face {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  width: calc(20% - 14px);
-  min-width: 130px;
-  max-width: 160px;
-  padding: 18px 12px 16px;
-  border-radius: 24px;
-  background: linear-gradient(180deg, #fff 0%, var(--sky-light) 100%);
-  border: 2px solid #fff;
-  box-shadow: var(--shadow-soft);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
-
-.jump-card:hover {
-  transform: translateY(-8px) rotate(-1deg);
-  box-shadow: var(--shadow);
-  background: linear-gradient(180deg, #fff 0%, var(--pink-soft) 100%);
-}
-
-.jump-mascot {
-  width: 72px;
-  height: 72px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid #fff;
-  box-shadow: 0 6px 16px rgba(110, 184, 212, 0.2);
-  background: #fff;
-  animation: stickerFloat 5s ease-in-out infinite;
-}
-
-.jump-mascot img,
-.divider-mascot {
-  background: #fff;
-}
-
-.jump-mascot img {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  padding: 4px;
+  align-items: flex-start;
+  gap: 6px;
 }
 
-.jump-label {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+.locker-vents {
+  display: block;
+  width: 42px;
+  height: 10px;
+  margin-bottom: 8px;
+  background: repeating-linear-gradient(180deg, rgba(70,86,96,0.35) 0 1px, transparent 1px 3px);
+  opacity: 0.7;
+}
+
+.locker-num {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  color: #667782;
+}
+
+.locker-face strong {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
   color: var(--ink-deep);
 }
 
-.jump-label .go-arrow {
-  margin-left: 6px;
+.locker-face em {
+  font-style: normal;
+  font-size: 11px;
+  color: #667782;
+  line-height: 1.5;
 }
 
-.jump-desc {
-  font-size: 10px;
-  color: var(--ink-soft);
-  line-height: 1.5;
+.locker-slot {
+  margin-top: auto;
+  align-self: flex-end;
+  width: 14px;
+  height: 28px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #9aa8b0, #6d7c85);
+  box-shadow: inset 0 1px 2px rgba(255,255,255,0.5), 0 1px 0 rgba(44,51,58,0.25);
+}
+
+.sticker-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.sticker {
+  position: absolute;
+  pointer-events: auto;
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  font: inherit;
+  filter: drop-shadow(0 6px 10px rgba(44, 51, 58, 0.16));
+  transform: rotate(var(--rot, 0deg));
+}
+
+.sticker:active { cursor: grabbing; }
+
+.sticker img,
+.sticker-pic {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  pointer-events: none;
+  background: #fff;
+  border-radius: 50%;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.9);
+}
+
+.sticker.sticker-label {
+  padding: 6px 10px;
+  border-radius: 6px;
+  background: #fffaf4;
+  border: 1px solid rgba(44, 51, 58, 0.1);
+  font-size: 11px;
+  color: var(--ink-deep);
+  white-space: nowrap;
+}
+
+.sticker.is-dragging {
+  z-index: 5;
+  filter: drop-shadow(0 12px 18px rgba(44, 51, 58, 0.22));
 }
 
 /* 爱好跳转 */
@@ -819,7 +900,7 @@ img { display: block; max-width: 100%; }
 }
 
 .section-card.alt {
-  background: linear-gradient(145deg, rgba(255,255,255,0.95), rgba(232,248,255,0.9));
+  background: linear-gradient(160deg, rgba(255,252,248,0.96), rgba(236, 242, 245, 0.94));
 }
 
 .section-head { margin-bottom: 32px; overflow: visible; }
@@ -827,27 +908,27 @@ img { display: block; max-width: 100%; }
 .section-head .page-num {
   display: inline-block;
   margin-bottom: 10px;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--sky-light);
-  border: 1px dashed var(--blue-soft);
+  padding: 0;
+  border: 0;
+  background: none;
+  border-radius: 0;
   font-size: 11px;
-  letter-spacing: 0.2em;
-  color: var(--blue);
+  letter-spacing: 0.22em;
+  color: var(--ink-soft);
 }
 
 .section-head h2 {
-  font-family: "Zen Maru Gothic", "M PLUS Rounded 1c", sans-serif;
-  font-size: clamp(28px, 4vw, 38px);
-  font-weight: 700;
-  color: #8ec5d8;
+  font-family: var(--serif);
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 600;
+  color: var(--ink-deep);
   margin-bottom: 8px;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.02em;
 }
 
 .section-head h2 em {
-  font-style: normal;
-  color: #a8dcee;
+  font-style: italic;
+  color: var(--pink);
 }
 
 .section-head p {
@@ -1311,12 +1392,13 @@ img { display: block; max-width: 100%; }
 }
 
 .skills-block h3 {
-  font-family: "Zen Maru Gothic", sans-serif;
-  font-size: 18px;
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
   color: var(--ink-deep);
   margin-bottom: 16px;
   padding-bottom: 12px;
-  border-bottom: 2px dashed var(--blue-soft);
+  border-bottom: 1px solid rgba(44, 51, 58, 0.08);
 }
 
 .skill-jumps { display: grid; gap: 10px; }
@@ -1327,9 +1409,9 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 12px;
   padding: 14px 16px;
-  border-radius: 16px;
-  background: var(--sky-light);
-  border: 2px solid #fff;
+  border-radius: 14px;
+  background: linear-gradient(90deg, #f7fafb 0%, #fff 100%);
+  border: 1px solid rgba(44, 51, 58, 0.06);
   color: inherit;
   text-decoration: none;
   text-align: left;
@@ -1340,8 +1422,8 @@ img { display: block; max-width: 100%; }
 }
 
 .skill-jump:hover {
-  transform: translateX(6px);
-  background: linear-gradient(90deg, #fff 0%, var(--pink-soft) 100%);
+  transform: translateX(4px);
+  background: #fff;
   box-shadow: var(--shadow-soft);
 }
 
@@ -1812,6 +1894,11 @@ footer {
   40% { transform: translateY(-6px); }
 }
 
+@keyframes titleIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes letterBounce {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   25% { transform: translateY(-14px) rotate(-3deg); }
@@ -1934,8 +2021,9 @@ footer {
 
   .journal-sheet { padding: 32px 20px 36px; }
   .journal-avatar { width: 128px; }
-  .jump-card { width: calc(50% - 10px); min-width: 120px; }
-  .jump-card:last-child { width: calc(50% - 10px); }
+  .locker-bank { grid-template-columns: repeat(2, 1fr); }
+  .locker-door { min-height: 180px; }
+  .locker-door:last-child { grid-column: 1 / -1; }
   .hobby-nav { grid-template-columns: repeat(3, 1fr); gap: 6px; }
   .hobby-nav-card { padding: 7px 4px; gap: 4px; }
   .hobby-nav-card span:last-child { font-size: 11px; }

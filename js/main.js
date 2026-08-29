@@ -229,10 +229,6 @@ document.querySelectorAll("[data-slider]").forEach((slider) => {
   syncDots();
 });
 
-const CINNA_GIFS = Array.from({ length: 8 }, (_, i) =>
-  `assets/sanrio/cinna-${String(i + 1).padStart(2, "0")}.gif`
-);
-
 const pageDrifts = new Map();
 const pageVisibility = new Map();
 
@@ -243,26 +239,14 @@ document.querySelectorAll(".page").forEach((page, pageIndex) => {
   drift.className = "page-drift";
   drift.setAttribute("aria-hidden", "true");
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < 2; i += 1) {
     const cloud = document.createElement("span");
     cloud.className = "drift-cloud";
-    cloud.style.setProperty("--left", `${8 + i * 28}%`);
-    cloud.style.setProperty("--delay", `${i * 3 + (pageIndex % 3)}s`);
-    cloud.style.setProperty("--duration", `${14 + i * 3}s`);
-    cloud.style.setProperty("--size", `${46 + i * 12}px`);
+    cloud.style.setProperty("--left", `${12 + i * 46}%`);
+    cloud.style.setProperty("--delay", `${i * 5 + (pageIndex % 3)}s`);
+    cloud.style.setProperty("--duration", `${18 + i * 4}s`);
+    cloud.style.setProperty("--size", `${40 + i * 10}px`);
     drift.appendChild(cloud);
-  }
-
-  for (let i = 0; i < 2; i += 1) {
-    const img = document.createElement("img");
-    img.className = "drift-cinna";
-    img.src = CINNA_GIFS[(pageIndex * 2 + i) % CINNA_GIFS.length];
-    img.alt = "";
-    img.style.setProperty("--left", `${16 + i * 38}%`);
-    img.style.setProperty("--delay", `${i * 4 + 1 + (pageIndex % 4)}s`);
-    img.style.setProperty("--duration", `${16 + i * 4}s`);
-    img.style.setProperty("--size", "52px");
-    drift.appendChild(img);
   }
 
   document.body.appendChild(drift);
@@ -320,8 +304,9 @@ function spawnPops(x, y, count = 5) {
 }
 
 document.addEventListener("click", (event) => {
-  if (event.target.closest(".work-viewer, .topbar, .site-buddy")) return;
-  spawnPops(event.clientX, event.clientY, 4);
+  if (!event.target.closest(".page-icy")) return;
+  if (event.target.closest(".topbar")) return;
+  spawnPops(event.clientX, event.clientY, 3);
 });
 
 document.querySelectorAll(".bounce-letter:not(.space)").forEach((letter) => {
@@ -361,13 +346,11 @@ if (avatar) {
 const buddy = document.querySelector(".site-buddy");
 const buddyBubble = document.querySelector(".buddy-bubble");
 const buddyLines = [
-  "点我呀 ♡",
-  "点屏幕会掉小心心",
+  "柜门可以点进去",
+  "贴纸可以拖到别的门上",
   "往下滑，还有更多 Icy",
   "实习便利贴记得看",
-  "书单可以慢慢翻",
-  "今天也要开开心心",
-  "我是路过的云朵狗"
+  "书单可以慢慢翻"
 ];
 let buddyIndex = 0;
 let buddyTimer;
@@ -426,4 +409,75 @@ if (dropCount && dropSection && dropNum && !window.__icyDrop && !window.matchMed
 
   dropCount.classList.add("is-waiting");
   dropObserver.observe(dropSection);
+}
+
+const lockerWall = document.getElementById("locker-wall");
+const stickers = [...document.querySelectorAll("[data-sticker]")];
+
+if (lockerWall && stickers.length) {
+  const storageKey = "icy-locker-stickers";
+  let saved = {};
+  try {
+    saved = JSON.parse(localStorage.getItem(storageKey) || "{}");
+  } catch {
+    saved = {};
+  }
+
+  stickers.forEach((sticker) => {
+    const id = sticker.dataset.sticker;
+    if (saved[id]) {
+      sticker.style.left = saved[id].left;
+      sticker.style.top = saved[id].top;
+    }
+
+    let startX = 0;
+    let startY = 0;
+    let origX = 0;
+    let origY = 0;
+    let moved = false;
+
+    const persist = () => {
+      saved[id] = { left: sticker.style.left, top: sticker.style.top };
+      localStorage.setItem(storageKey, JSON.stringify(saved));
+    };
+
+    const onMove = (event) => {
+      const point = event.touches ? event.touches[0] : event;
+      const dx = point.clientX - startX;
+      const dy = point.clientY - startY;
+      if (Math.abs(dx) + Math.abs(dy) > 4) moved = true;
+      const rect = lockerWall.getBoundingClientRect();
+      const x = Math.min(Math.max(origX + dx, 0), rect.width - sticker.offsetWidth);
+      const y = Math.min(Math.max(origY + dy, 0), rect.height - sticker.offsetHeight);
+      sticker.style.left = `${(x / rect.width) * 100}%`;
+      sticker.style.top = `${(y / rect.height) * 100}%`;
+    };
+
+    const onUp = () => {
+      sticker.classList.remove("is-dragging");
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+      persist();
+    };
+
+    sticker.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      moved = false;
+      const point = event.touches ? event.touches[0] : event;
+      startX = point.clientX;
+      startY = point.clientY;
+      origX = sticker.offsetLeft;
+      origY = sticker.offsetTop;
+      sticker.classList.add("is-dragging");
+      sticker.setPointerCapture?.(event.pointerId);
+      window.addEventListener("pointermove", onMove);
+      window.addEventListener("pointerup", onUp);
+    });
+
+    sticker.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+  });
 }

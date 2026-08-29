@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-build="55">
+<html lang="zh-CN" data-build="56">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,11 +8,11 @@
   <meta http-equiv="Expires" content="0" />
   <meta name="description" content="Icy 的个人作品集" />
   <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=55" />
+  <link rel="stylesheet" href="css/style.css?v=56" />
   <style>
     @font-face {
       font-family: "Bagel Fat One";
-      src: url("assets/fonts/BagelFatOne-4.woff2?v=55") format("woff2");
+      src: url("assets/fonts/BagelFatOne-4.woff2?v=56") format("woff2");
       font-display: swap;
     }
   </style>
@@ -42,22 +42,10 @@
     <section class="page page-icy" id="icy">
       <div class="icy-clouds" aria-hidden="true">
         <span class="cloud cloud-a"></span>
-        <span class="cloud cloud-b"></span>
         <span class="cloud cloud-c"></span>
-        <span class="cloud cloud-d"></span>
       </div>
-      <div class="icy-sparkles" aria-hidden="true">
-        <span></span><span></span><span></span><span></span><span></span><span></span>
-      </div>
-      <img class="sanrio-float sf-1" src="assets/sanrio/cinna-01.gif" alt="" aria-hidden="true" />
-      <img class="sanrio-float sf-2" src="assets/sanrio/cinna-02.gif" alt="" aria-hidden="true" />
-      <img class="sanrio-float sf-3" src="assets/sanrio/cinna-03.gif" alt="" aria-hidden="true" />
-      <span class="icy-deco deco-1" aria-hidden="true">☁</span>
-      <span class="icy-deco deco-2" aria-hidden="true">♡</span>
-      <span class="icy-deco deco-3" aria-hidden="true">✦</span>
-
       <div class="icy-stage">
-        <p class="icy-kicker">WELCOME TO MY WORLD</p>
+        <p class="icy-kicker">Personal Locker</p>
         <h1 class="portfolio-title" aria-label="Icy's Portfolio">
           <span class="bounce-letter c1" style="--i:0">I</span>
           <span class="bounce-letter c2" style="--i:1">c</span>
@@ -75,8 +63,8 @@
           <span class="bounce-letter c3" style="--i:13">i</span>
           <span class="bounce-letter c4" style="--i:14">o</span>
         </h1>
-        <p class="icy-jp">ようこそ · いらっしゃい ♡</p>
-        <p class="icy-hint">点一点屏幕，会掉小心心</p>
+        <p class="icy-jp">ようこそ</p>
+        <p class="icy-hint">点柜门进去 · 贴纸可以拖走</p>
 
         <a class="icy-scroll" href="#intro"><span>SCROLL</span><span>↓</span></a>
       </div>
@@ -102,37 +90,66 @@
           </div>
 
           <div class="journal-divider">
-            <h3>不同的 Icy</h3>
-            <p>解锁更多的我</p>
+            <h3>储物柜</h3>
+            <p>柜门上的贴纸都能拖。点开一扇，看看不同的 Icy。</p>
           </div>
 
-          <nav class="jump-grid" aria-label="快速跳转">
-            <a class="jump-card has-go" href="#internship">
-              <div class="jump-mascot"><img src="assets/sanrio/cinna-05.gif" alt="玉桂狗" /></div>
-              <span class="jump-label">实习经历<span class="go-arrow" aria-hidden="true"></span></span>
-              <span class="jump-desc">NETEASE · POIZON</span>
-            </a>
-            <a class="jump-card has-go" href="#skills">
-              <div class="jump-mascot"><img src="assets/sanrio/cinna-07.gif" alt="玉桂狗" /></div>
-              <span class="jump-label">AI 工作流<span class="go-arrow" aria-hidden="true"></span></span>
-              <span class="jump-desc">方法 · 落地作品</span>
-            </a>
-            <a class="jump-card has-go" href="#gaming">
-              <div class="jump-mascot"><img src="assets/sanrio/cinna-06.gif" alt="玉桂狗" /></div>
-              <span class="jump-label">游戏经历<span class="go-arrow" aria-hidden="true"></span></span>
-              <span class="jump-desc">深度体验记录</span>
-            </a>
-            <a class="jump-card has-go" href="#interests">
-              <div class="jump-mascot"><img src="assets/sanrio/cinna-04.gif" alt="玉桂狗" /></div>
-              <span class="jump-label">兴趣爱好<span class="go-arrow" aria-hidden="true"></span></span>
-              <span class="jump-desc">音乐 · 摄影 · 旅游</span>
-            </a>
-            <a class="jump-card has-go" href="#writing">
-              <div class="jump-mascot"><img src="assets/sanrio/cinna-08.gif" alt="玉桂狗" /></div>
-              <span class="jump-label">阅读<span class="go-arrow" aria-hidden="true"></span></span>
-              <span class="jump-desc">哲学 · 经济</span>
-            </a>
-          </nav>
+          <div class="locker-wall" id="locker-wall">
+            <nav class="locker-bank" aria-label="储物柜">
+              <a class="locker-door" href="#internship">
+                <span class="locker-face">
+                  <span class="locker-vents" aria-hidden="true"></span>
+                  <span class="locker-num">01</span>
+                  <strong>实习</strong>
+                  <em>NETEASE · POIZON</em>
+                  <span class="locker-slot" aria-hidden="true"></span>
+                </span>
+              </a>
+              <a class="locker-door" href="#skills">
+                <span class="locker-face">
+                  <span class="locker-vents" aria-hidden="true"></span>
+                  <span class="locker-num">02</span>
+                  <strong>AI</strong>
+                  <em>方法 · 落地作品</em>
+                  <span class="locker-slot" aria-hidden="true"></span>
+                </span>
+              </a>
+              <a class="locker-door" href="#gaming">
+                <span class="locker-face">
+                  <span class="locker-vents" aria-hidden="true"></span>
+                  <span class="locker-num">03</span>
+                  <strong>游戏</strong>
+                  <em>深度体验记录</em>
+                  <span class="locker-slot" aria-hidden="true"></span>
+                </span>
+              </a>
+              <a class="locker-door" href="#interests">
+                <span class="locker-face">
+                  <span class="locker-vents" aria-hidden="true"></span>
+                  <span class="locker-num">04</span>
+                  <strong>爱好</strong>
+                  <em>音乐 · 摄影 · 旅行</em>
+                  <span class="locker-slot" aria-hidden="true"></span>
+                </span>
+              </a>
+              <a class="locker-door" href="#writing">
+                <span class="locker-face">
+                  <span class="locker-vents" aria-hidden="true"></span>
+                  <span class="locker-num">05</span>
+                  <strong>阅读</strong>
+                  <em>哲学 · 经济</em>
+                  <span class="locker-slot" aria-hidden="true"></span>
+                </span>
+              </a>
+            </nav>
+            <div class="sticker-layer" aria-hidden="true">
+              <button class="sticker" type="button" data-sticker="cinna-a" style="left:8%;top:14%;--rot:-9deg"><img class="sticker-pic" src="assets/sanrio/cinna-05.gif" alt=""></button>
+              <button class="sticker sticker-label" type="button" data-sticker="photo" style="left:62%;top:10%;--rot:7deg">摄影</button>
+              <button class="sticker sticker-label" type="button" data-sticker="jp" style="left:22%;top:72%;--rot:-5deg">日语</button>
+              <button class="sticker" type="button" data-sticker="cinna-b" style="left:78%;top:58%;--rot:8deg"><img class="sticker-pic" src="assets/sanrio/cinna-04.gif" alt=""></button>
+              <button class="sticker sticker-label" type="button" data-sticker="game" style="left:46%;top:78%;--rot:4deg">游戏</button>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -646,7 +663,7 @@
     </section>
   </main>
 
-  <footer><p>© <span id="year"></span> Icy · My Little Portfolio ♡</p></footer>
+  <footer><p>© <span id="year"></span> Icy</p></footer>
   <button class="site-buddy" type="button" aria-label="点我玩一玩">
     <img src="assets/sanrio/cinna-01.gif" alt="" />
     <span class="buddy-bubble">点我呀 ♡</span>
@@ -708,6 +725,6 @@
       }, { threshold: [0, 0.18, 0.4, 0.7] }).observe(section);
     })();
   </script>
-  <script src="js/main.js?v=55"></script>
+  <script src="js/main.js?v=56"></script>
 </body>
 </html>
