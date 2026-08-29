@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-build="56">
+<html lang="zh-CN" data-build="57">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,20 +7,14 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <meta name="description" content="Icy 的个人作品集" />
-  <title>Icy's Portfolio</title>
-  <link rel="stylesheet" href="css/style.css?v=56" />
-  <style>
-    @font-face {
-      font-family: "Bagel Fat One";
-      src: url("assets/fonts/BagelFatOne-4.woff2?v=56") format("woff2");
-      font-display: swap;
-    }
-  </style>
+  <title>Icy</title>
+  <link rel="stylesheet" href="css/style.css?v=57" />
+  <link rel="stylesheet" href="css/luxury.css?v=57" />
 </head>
 <body>
   <header class="topbar">
     <div class="topbar-inner">
-      <a class="brand" href="#icy">Icy <span>♡</span></a>
+      <a class="brand" href="#icy">Icy</a>
       <nav class="nav" aria-label="导航">
         <a href="#intro">关于</a>
         <a href="#internship">实习</a>
@@ -32,7 +26,7 @@
       </nav>
       <div style="display:flex;gap:8px;align-items:center;">
         <button class="menu-btn" aria-label="菜单">☰</button>
-        <a class="pill has-go" href="https://github.com/icywang11" target="_blank" rel="noopener noreferrer">GitHub<span class="go-arrow" aria-hidden="true"></span></a>
+        <a class="pill" href="https://github.com/icywang11" target="_blank" rel="noopener noreferrer">GitHub</a>
       </div>
     </div>
   </header>
@@ -40,33 +34,12 @@
   <main>
     <!-- 第一页 -->
     <section class="page page-icy" id="icy">
-      <div class="icy-clouds" aria-hidden="true">
-        <span class="cloud cloud-a"></span>
-        <span class="cloud cloud-c"></span>
-      </div>
       <div class="icy-stage">
-        <p class="icy-kicker">Personal Locker</p>
-        <h1 class="portfolio-title" aria-label="Icy's Portfolio">
-          <span class="bounce-letter c1" style="--i:0">I</span>
-          <span class="bounce-letter c2" style="--i:1">c</span>
-          <span class="bounce-letter c3" style="--i:2">y</span>
-          <span class="bounce-letter c4" style="--i:3">'</span>
-          <span class="bounce-letter c5" style="--i:4">s</span>
-          <span class="bounce-letter space" style="--i:5">&nbsp;</span>
-          <span class="bounce-letter c1" style="--i:6">P</span>
-          <span class="bounce-letter c2" style="--i:7">o</span>
-          <span class="bounce-letter c3" style="--i:8">r</span>
-          <span class="bounce-letter c4" style="--i:9">t</span>
-          <span class="bounce-letter c5" style="--i:10">f</span>
-          <span class="bounce-letter c1" style="--i:11">o</span>
-          <span class="bounce-letter c2" style="--i:12">l</span>
-          <span class="bounce-letter c3" style="--i:13">i</span>
-          <span class="bounce-letter c4" style="--i:14">o</span>
-        </h1>
-        <p class="icy-jp">ようこそ</p>
-        <p class="icy-hint">点柜门进去 · 贴纸可以拖走</p>
-
-        <a class="icy-scroll" href="#intro"><span>SCROLL</span><span>↓</span></a>
+        <p class="icy-kicker">Portfolio / 2026</p>
+        <h1 class="portfolio-title">Icy</h1>
+        <p class="icy-jp">海外运营 · 内容 · 数据</p>
+        <p class="icy-hint">NetEase · POIZON</p>
+        <a class="icy-scroll" href="#intro"><span>Index</span></a>
       </div>
     </section>
 
@@ -75,81 +48,46 @@
       <div class="shell page-inner">
         <div class="journal-sheet">
           <div class="journal-top">
-            <div class="avatar-wrap journal-avatar" role="button" tabindex="0" aria-label="点一点头像">
+            <div class="avatar-wrap journal-avatar">
               <img src="assets/avatar.jpg" alt="Icy" />
-              <span class="avatar-heart" aria-hidden="true">♡</span>
             </div>
             <div class="journal-intro">
-              <p class="journal-label">About Me · 自己紹介</p>
-              <h2>你好，我是 <em>Icy</em></h2>
-              <p>海外运营 · 内容 · 数据。喜欢把游戏、音乐和旅行融进日常。</p>
+              <p class="journal-label">About</p>
+              <h2>Icy</h2>
+              <p>海外运营、内容与数据。把社区、活动和复盘做成可复用的工作流。</p>
               <div class="journal-tags">
-                <span>海外运营</span><span>数据分析</span><span>阅读</span><span>日语</span><span>摄影</span>
+                <span>Operations</span><span>Data</span><span>Reading</span><span>Japanese</span><span>Photography</span>
               </div>
             </div>
           </div>
 
-          <div class="journal-divider">
-            <h3>储物柜</h3>
-            <p>柜门上的贴纸都能拖。点开一扇，看看不同的 Icy。</p>
-          </div>
-
-          <div class="locker-wall" id="locker-wall">
-            <nav class="locker-bank" aria-label="储物柜">
-              <a class="locker-door" href="#internship">
-                <span class="locker-face">
-                  <span class="locker-vents" aria-hidden="true"></span>
-                  <span class="locker-num">01</span>
-                  <strong>实习</strong>
-                  <em>NETEASE · POIZON</em>
-                  <span class="locker-slot" aria-hidden="true"></span>
-                </span>
-              </a>
-              <a class="locker-door" href="#skills">
-                <span class="locker-face">
-                  <span class="locker-vents" aria-hidden="true"></span>
-                  <span class="locker-num">02</span>
-                  <strong>AI</strong>
-                  <em>方法 · 落地作品</em>
-                  <span class="locker-slot" aria-hidden="true"></span>
-                </span>
-              </a>
-              <a class="locker-door" href="#gaming">
-                <span class="locker-face">
-                  <span class="locker-vents" aria-hidden="true"></span>
-                  <span class="locker-num">03</span>
-                  <strong>游戏</strong>
-                  <em>深度体验记录</em>
-                  <span class="locker-slot" aria-hidden="true"></span>
-                </span>
-              </a>
-              <a class="locker-door" href="#interests">
-                <span class="locker-face">
-                  <span class="locker-vents" aria-hidden="true"></span>
-                  <span class="locker-num">04</span>
-                  <strong>爱好</strong>
-                  <em>音乐 · 摄影 · 旅行</em>
-                  <span class="locker-slot" aria-hidden="true"></span>
-                </span>
-              </a>
-              <a class="locker-door" href="#writing">
-                <span class="locker-face">
-                  <span class="locker-vents" aria-hidden="true"></span>
-                  <span class="locker-num">05</span>
-                  <strong>阅读</strong>
-                  <em>哲学 · 经济</em>
-                  <span class="locker-slot" aria-hidden="true"></span>
-                </span>
-              </a>
-            </nav>
-            <div class="sticker-layer" aria-hidden="true">
-              <button class="sticker" type="button" data-sticker="cinna-a" style="left:8%;top:14%;--rot:-9deg"><img class="sticker-pic" src="assets/sanrio/cinna-05.gif" alt=""></button>
-              <button class="sticker sticker-label" type="button" data-sticker="photo" style="left:62%;top:10%;--rot:7deg">摄影</button>
-              <button class="sticker sticker-label" type="button" data-sticker="jp" style="left:22%;top:72%;--rot:-5deg">日语</button>
-              <button class="sticker" type="button" data-sticker="cinna-b" style="left:78%;top:58%;--rot:8deg"><img class="sticker-pic" src="assets/sanrio/cinna-04.gif" alt=""></button>
-              <button class="sticker sticker-label" type="button" data-sticker="game" style="left:46%;top:78%;--rot:4deg">游戏</button>
-            </div>
-          </div>
+          <nav class="index-list" aria-label="目录">
+            <a href="#internship">
+              <span class="index-num">01</span>
+              <strong>实习</strong>
+              <em>NETEASE · POIZON</em>
+            </a>
+            <a href="#skills">
+              <span class="index-num">02</span>
+              <strong>AI 工作流</strong>
+              <em>方法与落地作品</em>
+            </a>
+            <a href="#gaming">
+              <span class="index-num">03</span>
+              <strong>游戏</strong>
+              <em>长期投入的记录</em>
+            </a>
+            <a href="#interests">
+              <span class="index-num">04</span>
+              <strong>兴趣</strong>
+              <em>音乐 · 摄影 · 旅行</em>
+            </a>
+            <a href="#writing">
+              <span class="index-num">05</span>
+              <strong>阅读</strong>
+              <em>哲学 · 经济</em>
+            </a>
+          </nav>
         </div>
       </div>
     </section>
@@ -166,7 +104,7 @@
           <div class="sticky-board">
             <article class="sticky-note note-sky">
               <span class="washi washi-blue" aria-hidden="true"></span>
-              <span class="quest-tag">QUEST 01</span>
+              <span class="quest-tag">01</span>
               <p class="sticky-date">2026.03 — 2026.09</p>
               <p class="sticky-co">NETEASE</p>
               <h3>海外运营</h3>
@@ -180,7 +118,7 @@
             </article>
             <article class="sticky-note note-cream">
               <span class="washi washi-yellow" aria-hidden="true"></span>
-              <span class="quest-tag">QUEST 02</span>
+              <span class="quest-tag">02</span>
               <p class="sticky-date">2025.06 — 2025.09</p>
               <p class="sticky-co">POIZON</p>
               <h3>全球化运营</h3>
@@ -207,7 +145,7 @@
           </div>
           <div class="skills-split">
             <div class="skills-block">
-              <h3>🤖 搭建智能化机器人</h3>
+              <h3>搭建智能化机器人</h3>
               <div class="skill-jumps">
                 <div class="skill-item">
                   <span class="skill-jump-num">01</span>
@@ -234,7 +172,7 @@
               </div>
             </div>
             <div class="skills-block">
-              <h3>📊 数据分析</h3>
+              <h3>数据分析</h3>
               <div class="skill-jumps">
                 <a class="skill-jump has-go" href="https://icywang11.github.io/discord-community-board/" target="_blank" rel="noopener noreferrer">
                   <span class="skill-jump-num">01</span>
@@ -262,7 +200,7 @@
             </div>
           </div>
           <p class="section-more">
-            <a class="has-go" href="#ai-works">落地作品，点进去玩<span class="go-arrow" aria-hidden="true"></span></a>
+            <a class="has-go" href="#ai-works">查看落地作品<span class="go-arrow" aria-hidden="true"></span></a>
           </p>
         </div>
       </div>
@@ -275,7 +213,7 @@
           <div class="section-head">
             <span class="page-num">02 / AI</span>
             <h2>AI <em>工作流</em></h2>
-            <p class="works-lead">落地<span class="drop-count" data-drop-count><span class="drop-count-num">4</span></span>件作品，都可以点进去实操。</p>
+            <p class="works-lead">落地<span class="drop-count" data-drop-count><span class="drop-count-num">4</span></span>件作品，均可进入实操。</p>
           </div>
           <div class="work-jumps">
             <a class="skill-jump has-go" href="https://icywang11.github.io/chibi-forge/" target="_blank" rel="noopener noreferrer">
@@ -441,18 +379,18 @@
           <div class="section-head">
             <span class="page-num">04 / HOBBY</span>
             <h2>兴趣 <em>爱好</em></h2>
-            <p>点击分类，解锁不同的 Icy 碎片。</p>
+            <p>音乐、摄影与旅行。</p>
           </div>
 
           <nav class="hobby-nav" role="tablist" aria-label="爱好分类">
-            <button type="button" class="hobby-nav-card is-active" role="tab" aria-selected="true" aria-controls="hobby-music" data-hobby-tab="hobby-music"><span class="hobby-icon">🎵</span><span>听音乐</span></button>
-            <button type="button" class="hobby-nav-card" role="tab" aria-selected="false" aria-controls="hobby-photo" data-hobby-tab="hobby-photo"><span class="hobby-icon">📷</span><span>摄影</span></button>
-            <button type="button" class="hobby-nav-card" role="tab" aria-selected="false" aria-controls="hobby-travel" data-hobby-tab="hobby-travel"><span class="hobby-icon">✈️</span><span>旅游</span></button>
+            <button type="button" class="hobby-nav-card is-active" role="tab" aria-selected="true" aria-controls="hobby-music" data-hobby-tab="hobby-music"><span>Music</span></button>
+            <button type="button" class="hobby-nav-card" role="tab" aria-selected="false" aria-controls="hobby-photo" data-hobby-tab="hobby-photo"><span>Photo</span></button>
+            <button type="button" class="hobby-nav-card" role="tab" aria-selected="false" aria-controls="hobby-travel" data-hobby-tab="hobby-travel"><span>Travel</span></button>
           </nav>
 
           <div class="hobby-details">
             <article class="hobby-detail is-active" id="hobby-music" role="tabpanel">
-              <h3>🎵 听音乐</h3>
+              <h3>听音乐</h3>
               <p class="lyric-line" aria-label="海鸟和鱼相爱 只是一场意外">
                 <span class="lyric-row">
                   <span style="--i:0">海</span><span style="--i:1">鸟</span><span style="--i:2">和</span><span style="--i:3">鱼</span><span style="--i:4">相</span><span style="--i:5">爱</span>
@@ -498,7 +436,7 @@
               </div>
             </article>
             <article class="hobby-detail" id="hobby-photo" role="tabpanel" hidden>
-              <h3>📷 摄影</h3>
+              <h3>摄影</h3>
               <p class="lyric-line lyric-line--soft" aria-label="相机是我的语言，我说的每一个字都是看见">
                 <span class="lyric-row">
                   <span style="--i:0">相</span><span style="--i:1">机</span><span style="--i:2">是</span><span style="--i:3">我</span><span style="--i:4">的</span><span style="--i:5">语</span><span style="--i:6">言</span>
@@ -540,7 +478,7 @@
               </div>
             </article>
             <article class="hobby-detail" id="hobby-travel" role="tabpanel" hidden>
-              <h3>✈️ 旅游</h3>
+              <h3>旅游</h3>
               <p class="lyric-line" aria-label="读万卷书，行万里路">
                 <span class="lyric-row">
                   <span style="--i:0">读</span><span style="--i:1">万</span><span style="--i:2">卷</span><span style="--i:3">书</span>
@@ -586,14 +524,14 @@
           </div>
           <div class="writing-grid">
             <div class="book-card">
-              <h3>🌿 哲学</h3>
+              <h3>哲学</h3>
               <ul>
                 <li><strong>《百年孤独》</strong> — 加西亚·马尔克斯。家族百年里的循环、遗忘与爱。</li>
                 <li><strong>《悉达多》</strong> — 赫尔曼·黑塞。一条河，一次又一次把自己走回来。</li>
               </ul>
             </div>
             <div class="copy-card">
-              <h3>📈 经济</h3>
+              <h3>经济</h3>
               <ul>
                 <li><strong>《经营未来》</strong> — 李明博。从工薪族到经营者，把挑战当成日常功课。</li>
                 <li><strong>《置身事内》</strong> — 兰小欢。把中国经济放回政府与地方的真实运转里看。</li>
@@ -635,21 +573,18 @@
     <!-- 联系 -->
     <section class="page page-contact" id="contact">
       <div class="shell page-inner contact">
-        <h2>Contact <span>♡</span></h2>
-        <p>欢迎通过以下方式联系我</p>
+        <h2>Contact</h2>
+        <p>需要合作或想看更多，直接写信。</p>
         <div class="contact-grid">
           <button class="contact-card" type="button" data-copy="Wycrrika" data-toast="微信号已复制，请打开微信搜索添加">
-            <span class="contact-icon">💬</span>
             <span class="contact-label">微信 · Wycrrika</span>
             <span class="contact-hint">点击复制微信号</span>
           </button>
           <button class="contact-card" type="button" data-copy="wycsdu0516@163.com" data-toast="邮箱已复制">
-            <span class="contact-icon">📮</span>
             <span class="contact-label">wycsdu0516@163.com</span>
             <span class="contact-hint">点击复制邮箱</span>
           </button>
           <a class="contact-card has-go" href="mailto:wycsdu0516@163.com">
-            <span class="contact-icon">✉️</span>
             <span class="contact-label">发送邮件<span class="go-arrow" aria-hidden="true"></span></span>
             <span class="contact-hint">打开邮件客户端</span>
           </a>
@@ -664,10 +599,6 @@
   </main>
 
   <footer><p>© <span id="year"></span> Icy</p></footer>
-  <button class="site-buddy" type="button" aria-label="点我玩一玩">
-    <img src="assets/sanrio/cinna-01.gif" alt="" />
-    <span class="buddy-bubble">点我呀 ♡</span>
-  </button>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
   <div class="work-viewer" id="work-viewer" hidden>
     <div class="work-viewer-panel" role="dialog" aria-modal="true" aria-labelledby="work-viewer-title">
@@ -691,40 +622,18 @@
       window.__icyDrop = true;
       var el = document.querySelector("[data-drop-count]");
       var section = document.getElementById("ai-works");
-      var num = el && el.querySelector(".drop-count-num");
-      if (!el || !section || !num) return;
+      if (!el || !section) return;
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-      var looping = false;
-      var hold;
-      function play() {
-        el.classList.remove("is-drop");
-        el.classList.add("is-waiting");
-        void el.offsetWidth;
+      el.classList.add("is-waiting");
+      var io = new IntersectionObserver(function (entries) {
+        if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
         el.classList.remove("is-waiting");
         el.classList.add("is-drop");
-      }
-      num.addEventListener("animationend", function (event) {
-        if (event.animationName !== "countDrop" || !looping) return;
-        clearTimeout(hold);
-        hold = setTimeout(play, 1800);
-      });
-      el.classList.add("is-waiting");
-      new IntersectionObserver(function (entries) {
-        var visible = entries.some(function (entry) {
-          return entry.isIntersecting && entry.intersectionRatio >= 0.18;
-        });
-        if (visible && !looping) {
-          looping = true;
-          play();
-        } else if (!visible && looping) {
-          looping = false;
-          clearTimeout(hold);
-          el.classList.remove("is-drop");
-          el.classList.add("is-waiting");
-        }
-      }, { threshold: [0, 0.18, 0.4, 0.7] }).observe(section);
+        io.disconnect();
+      }, { threshold: 0.2 });
+      io.observe(section);
     })();
   </script>
-  <script src="js/main.js?v=56"></script>
+  <script src="js/main.js?v=57"></script>
 </body>
 </html>

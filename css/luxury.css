@@ -1,0 +1,608 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap");
+
+:root {
+  --paper: #f4f0e8;
+  --paper-2: #ece6db;
+  --ink: #1c1916;
+  --ink-deep: #141210;
+  --ink-soft: #6b645c;
+  --line: rgba(28, 25, 22, 0.14);
+  --accent: #6e3d32;
+  --white: #faf8f4;
+  --sky: var(--paper-2);
+  --sky-light: #f7f4ee;
+  --sky-deep: #cfc6b8;
+  --blue: var(--ink-soft);
+  --blue-soft: #ddd6cb;
+  --pink: var(--accent);
+  --pink-soft: #efe6dc;
+  --cream: #f7f4ee;
+  --yellow: #e4d6c0;
+  --lavender: #d8d0c6;
+  --shadow: none;
+  --shadow-soft: none;
+  --radius: 0;
+  --serif: "Cormorant Garamond", "Songti SC", "STSong", "Noto Serif SC", Georgia, serif;
+  --sans: "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+  color: var(--ink);
+  font-family: var(--sans);
+  background: var(--paper);
+  line-height: 1.75;
+}
+
+body::before,
+body::after,
+.icy-clouds,
+.icy-sparkles,
+.sanrio-float,
+.icy-deco,
+.page-drift,
+.site-buddy,
+.avatar-heart,
+.washi,
+.click-pop {
+  display: none !important;
+}
+
+.topbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  transform: none;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  background: rgba(244, 240, 232, 0.92);
+  box-shadow: none;
+  backdrop-filter: blur(16px);
+}
+
+.topbar-inner {
+  height: 64px;
+  padding: 0;
+  width: min(var(--max), calc(100% - 48px));
+}
+
+.brand {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+
+.brand span { display: none; }
+
+.nav {
+  gap: 22px;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav a {
+  padding: 0;
+  border-radius: 0;
+  color: var(--ink-soft);
+}
+
+.nav a:hover {
+  background: none;
+  color: var(--ink);
+}
+
+.nav a::after { display: none; }
+
+.pill {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.menu-btn {
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: transparent;
+}
+
+.page {
+  padding: 108px 0 80px;
+}
+
+.page-icy {
+  background: var(--paper);
+}
+
+.icy-stage {
+  padding: 0 24px;
+  text-align: left;
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.icy-kicker {
+  margin-bottom: 28px;
+  font-size: 11px;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.portfolio-title {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(72px, 16vw, 168px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 0.86;
+  letter-spacing: -0.03em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+
+.bounce-letter {
+  display: inline;
+  animation: none;
+}
+
+.icy-jp,
+.icy-hint {
+  font-family: var(--sans);
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+}
+
+.icy-scroll {
+  margin-top: 48px;
+  color: var(--ink);
+  letter-spacing: 0.28em;
+  animation: none;
+}
+
+.page-intro { background: var(--paper); }
+
+.journal-sheet {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+
+.journal-sheet::before { display: none; }
+
+.journal-top {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+  align-items: end;
+  text-align: left;
+  margin-bottom: 72px;
+}
+
+.journal-avatar,
+.avatar-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: 0;
+  border: 0;
+  box-shadow: none;
+  overflow: hidden;
+  background: var(--paper-2);
+}
+
+.journal-avatar:hover { transform: none; }
+
+.journal-avatar img {
+  border-radius: 0;
+  object-position: center 20%;
+}
+
+.journal-intro { max-width: none; }
+
+.journal-label {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.journal-intro h2 {
+  font-family: var(--serif);
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1;
+  margin: 12px 0 18px;
+}
+
+.journal-intro h2 em {
+  font-style: italic;
+  color: var(--ink);
+}
+
+.journal-intro p {
+  font-size: 15px;
+  max-width: 34em;
+}
+
+.journal-tags {
+  justify-content: flex-start;
+  gap: 18px;
+  margin-top: 22px;
+}
+
+.journal-tags span {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.journal-divider {
+  display: none;
+}
+
+.index-list {
+  display: grid;
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.index-list a {
+  display: grid;
+  grid-template-columns: 64px 1fr auto;
+  align-items: baseline;
+  gap: 16px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--line);
+  color: inherit;
+}
+
+.index-list a:hover strong {
+  font-style: italic;
+}
+
+.index-num {
+  font-family: var(--serif);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  color: var(--ink-soft);
+}
+
+.index-list strong {
+  font-family: var(--serif);
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.index-list em {
+  font-style: normal;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+.section-card,
+.section-card.alt,
+.skills-block,
+.game-card,
+.contact-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.section-head h2,
+.journal-divider h3,
+.skills-block h3,
+.game-card h3,
+.contact h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.section-head h2 em {
+  font-style: italic;
+  color: var(--ink-soft);
+}
+
+.section-head p,
+.works-lead {
+  font-family: var(--sans);
+}
+
+.drop-count-num {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.7em;
+  color: var(--ink);
+  -webkit-text-stroke: 0;
+  filter: none;
+  text-shadow: none;
+}
+
+.drop-count.is-waiting .drop-count-num {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-18px);
+}
+
+.drop-count.is-drop .drop-count-num {
+  animation: countDrop 0.9s ease both;
+}
+
+@keyframes countDrop {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.skill-jump,
+.skill-item {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding: 16px 0;
+}
+
+.skill-jump:hover {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.skill-jump-num {
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+  font-family: var(--serif);
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.skills-block h3 {
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 14px;
+}
+
+.sticky-board {
+  gap: 0;
+  padding: 0;
+}
+
+.sticky-note,
+.note-sky,
+.note-cream {
+  max-width: none;
+  padding: 8px 48px 8px 0;
+  background: none;
+  clip-path: none;
+  transform: none;
+  box-shadow: none;
+  font-family: var(--sans);
+}
+
+.sticky-note:hover,
+.note-sky:hover,
+.note-cream:hover {
+  transform: none;
+}
+
+.quest-tag {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+}
+
+.sticky-co {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--ink);
+}
+
+.sticky-date { color: var(--ink-soft); }
+
+.sticky-note h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+}
+
+.game-group-header,
+.game-card,
+.hobby-nav-card {
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.game-group-header {
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  padding-left: 0;
+  background: none;
+}
+
+.game-card {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.game-card:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: var(--line);
+}
+
+.game-logo-wrap {
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: var(--paper-2);
+}
+
+.game-badge {
+  border-radius: 0;
+  background: transparent;
+}
+
+.contact {
+  text-align: left;
+}
+
+.contact h2 {
+  font-size: clamp(48px, 8vw, 80px);
+  font-style: italic;
+}
+
+.contact h2 span { display: none; }
+
+.contact-grid {
+  margin: 32px 0;
+  gap: 0;
+}
+
+.contact-card {
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.contact-card:hover,
+.contact-card.copied {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.contact-icon { display: none; }
+
+.contact-label {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  justify-content: flex-start;
+}
+
+.social-link {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  text-align: left;
+  padding: 28px 24px;
+  width: min(var(--max), calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.go-arrow {
+  width: 6px;
+  height: 6px;
+  border-width: 1px;
+}
+
+.work-jumps .skill-jump {
+  align-items: start;
+}
+
+.hobby-nav {
+  gap: 0;
+  border-top: 1px solid var(--ink);
+}
+
+.hobby-nav-card {
+  padding: 14px 0;
+  border-radius: 0;
+  border-bottom: 1px solid var(--line);
+  background: none;
+  text-align: left;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+.hobby-nav-card.is-active {
+  background: none;
+  font-style: italic;
+}
+
+.book-card,
+.copy-card {
+  background: none;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+}
+
+.book-card h3,
+.copy-card h3 {
+  font-family: var(--serif);
+  font-weight: 500;
+  border-bottom: 1px solid var(--ink);
+  padding-bottom: 12px;
+}
+
+.author-banner {
+  border: 0;
+  background: none;
+}
+
+.work-viewer {
+  background: rgba(20, 18, 16, 0.72);
+}
+
+.work-viewer-panel {
+  border-radius: 0;
+  background: var(--paper);
+}
+
+.lyric-line { animation: none; }
+
+@media (max-width: 800px) {
+  .journal-top { grid-template-columns: 1fr; gap: 28px; }
+  .index-list a { grid-template-columns: 48px 1fr; }
+  .index-list em { grid-column: 2; }
+  .nav.open {
+    border: 1px solid var(--ink);
+    border-radius: 0;
+    background: var(--paper);
+  }
+  .sticky-note { padding-right: 0; }
+}
